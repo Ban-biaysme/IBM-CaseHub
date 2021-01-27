@@ -3,21 +3,30 @@ html,body,body *{
     padding: 0;
     margin: 0;
     background-color: inherit;
-    color: inherit;
+    color: #302e2e;
     font-family: 'Open Sans', sans-serif;
 }
 
 body{
-    background-image: url(images/pic1.jpg);
+    /*background-image: url(images/pic1.jpg);*/
     background-size: cover;
     background-position: center center;
+    /*background: linear-gradient(180deg, rgba(19,38,79,1) 0%, rgba(22,147,198,1) 52%, rgba(255,255,255,0) 82%);*/
 }
 
 .container{
     width: 100%;
     padding-top: 60px;
     padding-bottom: 100px;
-    background: linear-gradient(180deg, rgba(19,38,79,1) 0%, rgba(22,147,198,1) 52%, rgba(255,255,255,0) 82%);
+    background: linear-gradient(180deg, rgba(19,38,79,1) 0%, rgb(33, 89, 114) 52%, rgba(255,255,255,0) 82%);
+}
+h2.form-heading{
+    color: navajowhite;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: .1em;
+    font-family:  "Roboto", sans-serif;
 }
 
 .login-register-wrapper{

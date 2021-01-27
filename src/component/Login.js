@@ -9,7 +9,7 @@ export function Login({setToken}) {
     const [password, setPassword] = useState('');
 
     const login = e=> {
-        e.preventDefault();
+       e.preventDefault();
 
         Axios.post('http://3.104.104.28:3001/login', {
             username: {username},
@@ -17,6 +17,7 @@ export function Login({setToken}) {
         }).then((res) => {
             if(res.data['login'] === 'success') {
                 setToken('res.data')
+
             } else {
                 alert('Invalid Username or password !!');
             }
