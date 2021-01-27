@@ -14,16 +14,38 @@
   display: block;
   width: 3rem;
   height: 2.5px;
-  background: white;
+  background: #cbc3c3;
 }
 
 .main-navigation__title {
-  color: white;
+  color: #194a56;
+  text-align: center;
+  font-weight:700;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  font-family:  "Roboto", sans-serif;
+}
+
+h1 {
+  color: #8d9091;
+  text-align: center;
+  font-weight: bold;
+  font-size: 36px;
+  letter-spacing: .05em;
+  font-family:  "Roboto", sans-serif;
+}
+
+.title{
+  color: rgb(99, 212, 227);
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 36px;
 }
 
 .main-navigation__title a {
   text-decoration: none;
-  color: white;
+  color: #b8e3e9;
 }
 
 .main-navigation__header-nav {

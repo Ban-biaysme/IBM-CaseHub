@@ -6,17 +6,17 @@ import './NavLinks.css';
 const NavLinks = props => {
   return <ul className="nav-links">
     <li>
-      <NavLink to="/cs" exact>CREATE CASE STUDY</NavLink>
+      <NavLink to="/case-study" exact>CREATE CASE STUDY</NavLink>
     </li>
     <li>
-      <NavLink to="/view">VIEW CASE STUDY</NavLink>
+      <NavLink to="/view">VIEW</NavLink>
     </li>
     <li>
-      <NavLink to="/">EDIT CASE STUDY</NavLink>
+      <NavLink to="/export">EXPORT</NavLink>
     </li>
-    <li>
-      <NavLink to="/login">AUTHENTICATE</NavLink>
-    </li>
+    {/*<li>*/}
+    {/*  <NavLink to="/">DELETE</NavLink>*/}
+    {/*</li>*/}
   </ul>
 };
 
