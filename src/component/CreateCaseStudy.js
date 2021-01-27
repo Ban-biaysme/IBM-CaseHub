@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import Axios from "axios";
 
 export class CreateCaseStudy extends React.Component{
@@ -40,7 +40,11 @@ export class CreateCaseStudy extends React.Component{
                     <div className="form-group">
                         <label>Project Start Date:</label>
                         <div className="datepicker date input-group p-0 shadow-sm">
-                            <input type="date" id="startdate" name="checkin" placeholder="Checking in date YYYY-mm-dd*"
+
+                            <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
+
+
+                            <input type="date" id="startdate" name="project-startdate" placeholder="pro-start-date YYYY-mm-dd*"
                                    min='1899-01-01' className="form-control py-3 px-3" required="required"
                                    data-validation-required-message="Please enter project start date."/>
                             <div className="input-group-append"><span className="input-group-text px-3"><i
