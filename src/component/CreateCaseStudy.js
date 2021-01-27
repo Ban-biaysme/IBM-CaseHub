@@ -2,6 +2,25 @@ import React,{ useState } from 'react';
 import Axios from "axios";
 
 export class CreateCaseStudy extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={project_id: '', project_name:'', Project_industry:'', Project_type:'', Project_start_date:'',
+            Project_end_date:'',problem_space:'', approach:'',idea:'',impact:'' };
+    }
+
+    addCaseStudy(){
+        Axios.post('http://http://3.104.104.28/:3001/insert-cs', {
+            project_id: this.state.project_id,
+            client_name: this.state.client_name,
+            industry: this.state.industry,
+            problem: this.state.problem,
+            idea: this.state.idea,
+            impact: this.state.impact
+
+        }).then(()=> {
+            alert('Case study added successfully!!!!')
+        });
+    }
 
     render() {
         return (
@@ -25,8 +44,9 @@ export class CreateCaseStudy extends React.Component{
                     <div className="control-group form-group">
                         <div className="controls">
                             <label>Industry:</label>
-                            <select id="industry" name="industry" className="form-control" required
-                                    data-validation-required-message="select an Industry">
+                            <select id="Project_industry" name="industry" className="form-control" required
+                                    data-validation-required-message="select an Industry"
+                                    onChange={event => {this.setState({Project_industry:event.target.value})}} >
                                 <option disabled selected value="0">-- Select an option--</option>
                                 <option value="banking">Banking</option>
                                 <option value="healthcare"> Heath Care</option>
@@ -74,7 +94,7 @@ export class CreateCaseStudy extends React.Component{
                     <div className="control-group form-group">
                         <div className="controls">
                             <label>Project Type:</label>
-                            <select id="project-type" name="type" className="form-control" required
+                            <select id="Project_type" name="type" className="form-control" required
                                     data-validation-required-message="select an Industry">
                                 <option disabled selected value="0">-- Select an option--</option>
                                 <option value="agile">Agile</option>
