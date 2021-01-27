@@ -50,7 +50,7 @@ export function Login({setToken}) {
                         </div>
 
                         <div className="col-lg-12 text-center">
-                        <button className="btn btn-primary submit" type="submit">LOGIN</button>
+                        <button className="btn btn-primary"  id="login-btn" type="submit">LOGIN</button>
                         </div>
                     </div>
 
