@@ -10,7 +10,7 @@ export class CreateCS extends React.Component{
     }
 
     addCaseStudy(){
-        Axios.post('http://localhost:3001/insert-cs', {
+        Axios.post('http://http://3.104.104.28/:3001/insert-cs', {
             project_id: this.state.project_id,
             client_name: this.state.client_name,
             industry: this.state.industry,
