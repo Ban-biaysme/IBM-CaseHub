@@ -7,7 +7,9 @@ export class CreateCaseStudy extends React.Component{
         this.state={project_id: '', project_name:'', Project_industry:'', Project_type:'', client_name:'', Project_start_date:'',
             Project_end_date:'',problem_space:'', approach:'',idea:'',impact:''};
 
-    }addCaseStudy(){
+    }
+
+    addCaseStudy(){
         Axios.post('http://3.104.104.28:3001/insert-cs', {
             project_id: this.state.project_id,
             project_name: this.state.project_name,
@@ -40,11 +42,10 @@ export class CreateCaseStudy extends React.Component{
         return (
             <div>
                 <div className="col-lg-12 text-center">
-                    <h2 className="form-heading text-uppercase">
-                      <span className="text-wrapper">
-                          <span className="letters">CREATE CASE STUDY</span>
-                        </span></h2>
+                    <h1><span className="title">CREATE PROJECT</span> CASE STUDY</h1>
+                    <br/><br/>
                 </div>
+
             <div className="row">
                 <div className="col-lg-6 mb-4">
 
@@ -58,7 +59,7 @@ export class CreateCaseStudy extends React.Component{
                     <div className="control-group form-group">
                         <div className="controls">
                             <label>Industry:</label>
-                            <select id="industry" name="industry" className="form-control" required
+                            <select id="Project_industry" name="industry" className="form-control" required
                                     data-validation-required-message="select an Industry"
                                     onChange={event => {this.setState({Project_industry:event.target.value})}} >
                                 <option disabled selected value="0">-- Select an option--</option>
@@ -84,6 +85,12 @@ export class CreateCaseStudy extends React.Component{
                     </div>
 
 
+                    {/*<div className="control-group form-group">*/}
+                    {/*    <div className="controls">*/}
+                    {/*        <label htmlFor="client_name">Client Name</label>*/}
+                    {/*        <input onChange={event => {this.setState({client_name:event.target.value})}} type="text" className="form-control" id="project_id"/>*/}
+                    {/*    </div>*/}
+                    {/*</div> /!*end of client name*!/*/}
 
                 </div>
 
@@ -99,8 +106,9 @@ export class CreateCaseStudy extends React.Component{
                     <div className="control-group form-group">
                         <div className="controls">
                             <label>Project Type:</label>
-                            <select id="project-type" name="type" className="form-control" required
-                                    data-validation-required-message="select an Industry">
+                            <select id="Project_type" name="type" className="form-control" required
+                                    data-validation-required-message="select an Industry"
+                                    onChange={event => {this.setState({Project_type:event.target.value})}}>
                                 <option disabled selected value="0">-- Select an option--</option>
                                 <option value="agile">Agile</option>
                                 <option value="garage"> Garage</option>
@@ -114,7 +122,8 @@ export class CreateCaseStudy extends React.Component{
                         <div className="datepicker date input-group p-0 shadow-sm">
                             <input type="date" id="enddate" name="checkin" placeholder="Checking in date YYYY-mm-dd*"
                                    min='1899-01-01' className="form-control py-3 px-3" required="required"
-                                   data-validation-required-message="Please enter project end date."/>
+                                   data-validation-required-message="Please enter project end date."
+                                   onChange={event => {this.setState({Project_end_date:event.target.value})}}/>
                             <div className="input-group-append"><span className="input-group-text px-3"><i
                                 className="fas fa-clock"></i></span>
                             </div>
@@ -164,7 +173,7 @@ export class CreateCaseStudy extends React.Component{
                                           maxLength="999"
                                           onChange={event => {this.setState({idea:event.target.value})}}/>
                             </div>
-                        </div> {/* end of idea */}
+                        </div> {/* end of Idea */}
 
                         <div className="control-group form-group">
                             <div className="controls">
@@ -174,15 +183,17 @@ export class CreateCaseStudy extends React.Component{
                                           maxLength="999"
                                           onChange={event => {this.setState({impact:event.target.value})}}/>
                             </div>
-                        </div> {/* end of impact */}
+                        </div> {/* end of Impact */}
 
                     </div>
                 </div>
+
                 <div className="col-lg-12 text-center">
                     <div>
-                        <button className="btn btn-success"  id="cs-submit" onClick={() => this.addCaseStudy()}> SUBMIT</button>
+                        <button className="btn btn-success" id="save-form-btn" onClick={() => this.addCaseStudy()}> SAVE CASE STUDY</button>
                     </div>
                 </div>
+
             </div>
         // end of the main div
         )

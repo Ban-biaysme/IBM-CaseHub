@@ -27,20 +27,33 @@ export class View extends React.Component{
                     <table className="table">
                         <thead>
                             <tr> <th> Project ID</th>
+
+                                <th> Project Name</th>
+                                <th> Project Type</th>
+                                <th> Industry</th>
+
                                 <th> Client Name </th>
-                                <th> Industry </th>
-                                <th> Problem </th>
+                                <th> Project Start  Date </th>
+                                <th> Project End  Date </th>
+                                <th> Problem Space</th>
                                 <th> Project Idea </th>
                                 <th> Project Impact </th>
                             </tr>
                         </thead>
                         <tbody>
+
                         {Array.from(this.state.data).map((val)=> {
                             return(
                                 <tr> <td> {val.project_id}</td>
+
+                                    <td> {val.project_name}</td>
+                                    <td> {val.Project_industry}</td>
+                                    <td> {val.Project_type}</td>
                                     <td> {val.client_name}</td>
-                                    <td> {val.industry}</td>
-                                    <td> {val.problem}</td>
+                                    <td> {val.Project_start_date}</td>
+                                    <td> {val.Project_end_date}</td>
+                                    <td> {val.problem_space}</td>
+                                    <td> {val.approach}</td>
                                     <td> {val.idea}</td>
                                     <td> {val.impact}</td>
                                 </tr>
