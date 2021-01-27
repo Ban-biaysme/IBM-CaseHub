@@ -1,0 +1,97 @@
+import React from 'react';
+import Axios from "axios";
+
+export class CreateCaseStudy extends React.Component{
+
+    render() {
+        return (
+            <div>
+            <div className="row">
+                <div className="col-lg-6 mb-4">
+
+                    <div className="control-group form-group">
+                        <div className="controls">
+                            <label htmlFor="project_id">Project ID</label>
+                            <input onChange={event => {this.setState({project_id:event.target.value})}} type="text" className="form-control" id="project_id"/>
+                        </div>
+                    </div> {/*end of project id*/}
+
+                    <div className="control-group form-group">
+                        <div className="controls">
+                            <label>Industry:</label>
+                            <select id="industry" name="industry" className="form-control" required
+                                    data-validation-required-message="select an Industry">
+                                <option disabled selected value="0">-- Select an option--</option>
+                                <option value="banking">Banking</option>
+                                <option value="healthcare"> Heath Care</option>
+                                <option value="telecom">Telecommunication</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div> {/*end of Industry*/}
+
+
+                    <div className="form-group">
+                        <label>Project Start Date:</label>
+                        <div className="datepicker date input-group p-0 shadow-sm">
+                            <input type="date" id="startdate" name="checkin" placeholder="Checking in date YYYY-mm-dd*"
+                                   min='1899-01-01' className="form-control py-3 px-3" required="required"
+                                   data-validation-required-message="Please enter project start date."/>
+                            <div className="input-group-append"><span className="input-group-text px-3"><i
+                                className="fas fa-clock"></i></span></div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div className="col-lg-6 mb-4">
+
+                    <div className="control-group form-group">
+                        <div className="controls">
+                            <label htmlFor="project_name">Project Name</label>
+                            <input onChange={event => {this.setState({project_name:event.target.value})}} type="text" className="form-control" id="project_id"/>
+                        </div>
+                    </div> {/*end of project id*/}
+
+                    <div className="control-group form-group">
+                        <div className="controls">
+                            <label>Project Type:</label>
+                            <select id="project-type" name="type" className="form-control" required
+                                    data-validation-required-message="select an Industry">
+                                <option disabled selected value="0">-- Select an option--</option>
+                                <option value="agile">Agile</option>
+                                <option value="garage"> Garage</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div> {/*end of Project Type*/}
+
+                    <div className="form-group">
+                        <label>Project End Date:</label>
+                        <div className="datepicker date input-group p-0 shadow-sm">
+                            <input type="date" id="enddate" name="checkin" placeholder="Checking in date YYYY-mm-dd*"
+                                   min='1899-01-01' className="form-control py-3 px-3" required="required"
+                                   data-validation-required-message="Please enter project end date."/>
+                            <div className="input-group-append"><span className="input-group-text px-3"><i
+                                className="fas fa-clock"></i></span>
+                            </div>
+                        </div>
+                    </div> {/*end of Project end date */}
+
+                </div>
+
+            </div>   {/*end of first row */}
+
+                <div className="row">
+                    <div className="col-lg-6 mb-4">
+
+                    </div>
+                </div>
+            </div>
+        // end of the main div
+        )
+
+    }
+}
+

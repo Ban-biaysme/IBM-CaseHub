@@ -8,9 +8,10 @@ html,body,body *{
 }
 
 body{
-    background-image: url(images/pic1.jpg);
+    /*background-image: url(images/pic1.jpg);*/
     background-size: cover;
     background-position: center center;
+    /*background: linear-gradient(180deg, rgba(19,38,79,1) 0%, rgba(22,147,198,1) 52%, rgba(255,255,255,0) 82%);*/
 }
 
 .container{

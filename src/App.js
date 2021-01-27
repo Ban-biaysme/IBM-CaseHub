@@ -10,12 +10,14 @@ import {
 import {Home}  from "./component/Home";
 import {CreateCS}  from "./component/CreateCS";
 import {View}  from "./component/View";
-import {Login} from "./component/Login"
+import {Login} from "./component/Login";
+import {CreateCaseStudy} from "./component/CreateCaseStudy";
 
 import MainNavigation from './component/Navigation/MainNavigation';
 
+
 function App() {
-    const [token, setToken] = useState('');
+     const [token, setToken] = useState('');
 
     if(!token) {
         return <Login setToken={setToken} />
@@ -51,6 +53,10 @@ function App() {
                         </Route>
                         <Route path="/login"exact>
                             <Login />
+                        </Route>
+
+                        <Route path="/caseS"exact>
+                            <CreateCaseStudy />
                         </Route>
                         <Redirect to="/" />
                     </Switch>
