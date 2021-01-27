@@ -39,7 +39,7 @@ export class CreateCaseStudy extends React.Component{
 
                     <div className="form-group">
                         <label>Project Start Date:</label>
-                        <div className="datepicker date input-group p-0 shadow-sm">
+                        {/*<div className="datepicker date input-group p-0 shadow-sm">
 
                             <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
 
@@ -49,7 +49,7 @@ export class CreateCaseStudy extends React.Component{
                                    data-validation-required-message="Please enter project start date."/>
                             <div className="input-group-append"><span className="input-group-text px-3"><i
                                 className="fas fa-clock"></i></span></div>
-                        </div>
+                        </div>*/}
                     </div>
 
 
