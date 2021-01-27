@@ -6,6 +6,12 @@ export class CreateCaseStudy extends React.Component{
     render() {
         return (
             <div>
+                <div className="col-lg-12 text-center">
+                    <h2 className="form-heading text-uppercase">
+                      <span className="text-wrapper">
+                          <span className="letters">CREATE CASE STUDY</span>
+                        </span></h2>
+                </div>
             <div className="row">
                 <div className="col-lg-6 mb-4">
 
@@ -42,6 +48,13 @@ export class CreateCaseStudy extends React.Component{
                         </div>
                     </div>
 
+
+                    {/*<div className="control-group form-group">*/}
+                    {/*    <div className="controls">*/}
+                    {/*        <label htmlFor="client_name">Client Name</label>*/}
+                    {/*        <input onChange={event => {this.setState({client_name:event.target.value})}} type="text" className="form-control" id="project_id"/>*/}
+                    {/*    </div>*/}
+                    {/*</div> /!*end of client name*!/*/}
 
                 </div>
 
@@ -83,8 +96,56 @@ export class CreateCaseStudy extends React.Component{
 
             </div>   {/*end of first row */}
 
+                <div className="control-group form-group">
+                    <div className="controls">
+                        <label htmlFor="client_name" >Client Name</label>
+                        <input onChange={event => {this.setState({client_name:event.target.value})}} type="text" className="form-control" id="project_id"/>
+                    </div>
+                </div> {/*end of client name*/}
+
+
                 <div className="row">
-                    <div className="col-lg-6 mb-4">
+                    <div className="col-lg-12 mb-4">
+
+                        <div className="control-group form-group">
+                            <div className="controls">
+                                <label>Problem :</label>
+                                <textarea id="problem_space" name="comments" rows="5" cols="30" className="form-control"
+                                          data-validation-required-message="Please enter your message"
+                                          maxLength="999"
+                                          onChange={event => {this.setState({problem_space:event.target.value})}}/>
+                            </div>
+                        </div>  {/* end of Problem */}
+
+                        <div className="control-group form-group">
+                            <div className="controls">
+                                <label>Approach :</label>
+                                <textarea id="approach" name="comments" rows="5" cols="30" className="form-control"
+                                          data-validation-required-message="Please enter your message"
+                                          maxLength="999"
+                                          onChange={event => {this.setState({approach:event.target.value})}}/>
+                            </div>
+                        </div>  {/* end of Approach */}
+
+                        <div className="control-group form-group">
+                            <div className="controls">
+                                <label>Idea :</label>
+                                <textarea id="idea" name="comments" rows="5" cols="30" className="form-control"
+                                          data-validation-required-message="Please enter your message"
+                                          maxLength="999"
+                                          onChange={event => {this.setState({idea:event.target.value})}}/>
+                            </div>
+                        </div> {/* end of Approach */}
+
+                        <div className="control-group form-group">
+                            <div className="controls">
+                                <label>Impact :</label>
+                                <textarea id="impact" name="comments" rows="5" cols="30" className="form-control"
+                                          data-validation-required-message="Please enter your message"
+                                          maxLength="999"
+                                          onChange={event => {this.setState({impact:event.target.value})}}/>
+                            </div>
+                        </div> {/* end of Approach */}
 
                     </div>
                 </div>
