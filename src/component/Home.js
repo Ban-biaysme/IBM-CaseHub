@@ -15,7 +15,7 @@ export class Home extends React.Component{
         return(
             <div>
                 {/*<div className="home-div-link">*/}
-                {/*    <button onClick={()=>this.casestudy()} className="btn btn-primary home-btn"> CREATE CASE STUDY </button>*/}
+                {/*    <button onClick={()=>this.casestudy()} className="btn btn-primary home-btn"> create.js CASE STUDY </button>*/}
                 {/*</div>*/}
 
                 {/*<div className="home-div-link">*/}

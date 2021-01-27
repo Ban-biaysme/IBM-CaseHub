@@ -2,15 +2,15 @@ import React from 'react';
 import Axios from "axios";
 
 
-export class CreateCS extends React.Component{
+export class CreateCS extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={project_id: '', client_name:'', industry:'', problem:'', idea:'', impact:''};
+        this.state = {project_id: '', client_name: '', industry: '', problem: '', idea: '', impact: ''};
     }
 
-    addCaseStudy(){
-        Axios.post('http://http://3.104.104.28/:3001/insert-cs', {
+    addCaseStudy() {
+        Axios.post('http://localhost:3001/insert-cs', {
             project_id: this.state.project_id,
             client_name: this.state.client_name,
             industry: this.state.industry,
@@ -18,7 +18,7 @@ export class CreateCS extends React.Component{
             idea: this.state.idea,
             impact: this.state.impact
 
-        }).then(()=> {
+        }).then(() => {
             alert('Case study added successfully!!!!')
         });
     }
@@ -32,21 +32,27 @@ export class CreateCS extends React.Component{
                         <div className="control-group form-group">
                             <div className="controls">
                                 <label htmlFor="project_id">Project ID</label>
-                                <input onChange={event => {this.setState({project_id:event.target.value})}} type="text" className="form-control" id="project_id"/>
+                                <input onChange={event => {
+                                    this.setState({project_id: event.target.value})
+                                }} type="text" className="form-control" id="project_id"/>
                             </div>
                         </div>
 
                         <div className="control-group form-group">
                             <div className="controls">
                                 <label htmlFor="client_name">Client Name </label>
-                                <input onChange={event => {this.setState({client_name:event.target.value})}}  type="text" className="form-control" id="client_name"/>
+                                <input onChange={event => {
+                                    this.setState({client_name: event.target.value})
+                                }} type="text" className="form-control" id="client_name"/>
                             </div>
                         </div>
 
                         <div className="control-group form-group">
                             <div className="controls">
-                            <label htmlFor="industry">Industry </label>
-                            <input onChange={event => {this.setState({industry:event.target.value})}} type="text" className="form-control" id="industry"/>
+                                <label htmlFor="industry">Industry </label>
+                                <input onChange={event => {
+                                    this.setState({industry: event.target.value})
+                                }} type="text" className="form-control" id="industry"/>
                             </div>
                         </div>
 
@@ -69,8 +75,10 @@ export class CreateCS extends React.Component{
                     <div className="col-lg-6 mb-4">
                         <div className="control-group form-group">
                             <div className="controls">
-                            <label htmlFor="problem">Problem </label>
-                            <input onChange={event => {this.setState({problem:event.target.value})}} type="text" className="form-control" id="problem"/>
+                                <label htmlFor="problem">Problem </label>
+                                <input onChange={event => {
+                                    this.setState({problem: event.target.value})
+                                }} type="text" className="form-control" id="problem"/>
                             </div>
                         </div>
 
@@ -87,7 +95,9 @@ export class CreateCS extends React.Component{
                                 <textarea id="idea" name="comments" rows="5" cols="30" className="form-control"
                                           data-validation-required-message="Please enter your message"
                                           maxLength="999"
-                                          onChange={event => {this.setState({idea:event.target.value})}}/>
+                                          onChange={event => {
+                                              this.setState({idea: event.target.value})
+                                          }}/>
                             </div>
                         </div>
 
@@ -97,7 +107,9 @@ export class CreateCS extends React.Component{
                                 <textarea id="impact" name="comments" rows="5" cols="30" className="form-control"
                                           data-validation-required-message="Please enter your message"
                                           maxLength="999"
-                                          onChange={event => {this.setState({impact:event.target.value})}} />
+                                          onChange={event => {
+                                              this.setState({impact: event.target.value})
+                                          }}/>
                             </div>
                         </div>
 
@@ -110,7 +122,9 @@ export class CreateCS extends React.Component{
                     </div>
                     <div className="col-lg-12 text-center">
                         <div>
-                            <button className="btn btn-success"  id="cs-submit" onClick={() => this.addCaseStudy()}> SUBMIT</button>
+                            <button className="btn btn-success" id="cs-submit"
+                                    onClick={() => this.addCaseStudy()}> SUBMIT
+                            </button>
                         </div>
                     </div>
                 </div>
