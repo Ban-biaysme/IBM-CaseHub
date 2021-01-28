@@ -8,6 +8,7 @@ import {
     Switch
 }
 from 'react-router-dom';
+import Cases from './casestudy/pages/Cases';
 import {Home}  from "./component/Home";
 import {CreateCS}  from "./component/CreateCS";
 import {View}  from "./component/View";
@@ -45,7 +46,7 @@ function App() {
                     <Switch>
                         {/*Route to the Home component*/}
                         <Route path="/" exact>
-                            <Home />
+                            <Cases />
                         </Route>
                         {/*Route to the Create case study component*/}
                         <Route path="/case-study" exact>
@@ -62,6 +63,9 @@ function App() {
                         {/*Route to the Export component*/}
                         <Route path="/export"exact>
                             <Export />
+                        </Route>
+                        <Route path="/cases" exact>
+                            <Cases />
                         </Route>
 
                         <Redirect to="/" />
