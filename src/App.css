@@ -3,30 +3,44 @@ html,body,body *{
     padding: 0;
     margin: 0;
     background-color: inherit;
-    color: #302e2e;
+    color: #262525;
     font-family: 'Open Sans', sans-serif;
+
 }
 
-body{
-    /*background-image: url(images/pic1.jpg);*/
-    background-size: cover;
-    background-position: center center;
-    background: linear-gradient(180deg, rgb(1, 33, 43) 0%, rgb(7, 41, 41) 52%, rgb(11, 56, 59) 82%);
+#root{
+    padding: 0;
+    margin: 0;
 }
 
-.container{
+p {
+    line-height: 1.75;
+}
+
+a {
+    color: #031b22;
+}
+
+a:hover {
+    color: #91eeee;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.container-fluid{
     width: 100%;
-    padding-top: 60px;
-    padding-bottom: 100px;
-    background: rgb(2, 34, 48);
-}
-.form-heading{
-    color: navajowhite;
-    text-align: center;
-    font-weight: bold;
-    font-size: 30px;
-    letter-spacing: .1em;
-    font-family:  "Roboto", sans-serif;
+    padding-top: 0;
+    margin: 0;
+    padding-bottom: 0;
+    background: linear-gradient(rgb(226, 236, 245), rgb(237, 238, 239));
 }
 
 
@@ -44,121 +58,12 @@ button:focus{
     outline: 0px;
 }
 
-button.active{
-    padding-bottom: 10px;
-    border-bottom: solid 2px rgba(255,255,255,.1);
-}
+/*button.active{*/
+/*    padding-bottom: 10px;*/
+/*    border-bottom: solid 2px rgba(255,255,255,.1);*/
+/*}*/
 
-/* footer forgot section */
-.forgot-panel{
-    position: relative;
-    height: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    padding-top: 24px;
-    border-top: solid 1px rgba(255,255,255,.3);
-}
 
-.form-group input{
-    width:100%;
-    height: 35px;
-    padding-left: 15px;
-    border:none;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    background: rgba(255,255,255,.2);
-}
 
-.form-group label{
-    text-transform: uppercase;
-}
-#save-form-btn{
-    text-transform: uppercase;
-    font-size: 1em;
-    text-align: center;
-    color:rgba(255,255,255,1);
-    padding: 8px 0px;
-    width: 50%;
-    height:35px;
-    border: none;
-    border-radius: 20px;
-    margin-top: 23px;
-    margin-bottom: 23px;
-    background-color: #90ddf1;
-    font-weight: bold;
-}
 
-form#registerForm{
-    left:500px;
-    top:-230px;
-    position:relative;
-}
 
-.forgot-panel{
-    margin-top: -300px;
-    color:grey;
-}
-
-form, .forgot-panel{
-    position:relative;
-    transition: all .2s ease;
-}
-#loginBtn, #registerBtn{
-    transition: all .5s ease;
-}
-
-.home-div-link{
-    height: 100px;
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 2em;
-    border-radius: 5px;
-    box-shadow: 0px 2px 7px rgba(0,0,0,0.2);
-    overflow: hidden;
-    color: #ffffff;
-  /*//  background: linear-gradient(180deg, rgba(19,38,79,1) 0%, rgba(22,147,198,1) 52%, rgba(255,255,255,0) 82%);*/
-    text-align: center;
-}
-
-.home-btn{
-    height: 90%;
-    width: 90%;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 1em;
-    text-align: center;
-    color:rgba(255,255,255,1);
-    padding: 8px 0px;
-    border: none;
-    border-radius: 10px;
-    margin-top: 10px;
-    background: linear-gradient(180deg, rgba(19,38,79,1) 0%, rgba(22,147,198,1) 52%, rgba(255,255,255,0) 82%);
-}
-
-#cs-submit{
-    font-weight:700;
-    text-transform: uppercase;
-    font-size: 1em;
-    text-align: center;
-    color:rgba(255,255,255,1);
-    padding: 8px 0px;
-    width: 30%;
-    height:45px;
-    border: none;
-    border-radius: 20px;
-    margin-top: 23px;
-    background-color: #152e43;
-}
-.cs-form{
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 2em;
-    border-radius: 5px;
-    box-shadow: 0px 2px 7px rgba(0,0,0,0.2);
-    overflow: hidden;
-    color: #ffffff;
-    /*background: linear-gradient(180deg, rgba(19,38,79,1) 0%, rgba(22,147,198,1) 52%, rgba(255,255,255,0) 82%);*/
-
-}

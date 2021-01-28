@@ -18,9 +18,8 @@
 }
 
 .main-navigation__title {
-  color: #194a56;
+  color: #262626;
   text-align: center;
-  font-weight:700;
   font-size: 36px;
   font-weight: 600;
   letter-spacing: .1em;
@@ -37,7 +36,7 @@ h1 {
 }
 
 .title{
-  color: rgb(99, 212, 227);
+  color: rgb(201, 208, 208);
   text-transform: uppercase;
   font-weight: 800;
   font-size: 36px;

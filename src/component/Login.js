@@ -26,31 +26,31 @@ export function Login({setToken}) {
     }
 
     return (
-            <div className="main-div">
+            <div className="ibm-main-div">
                 <form onSubmit={login}>
-                    <h1><span className="title">WELCOME TO</span> IBM-iX</h1>
-                    <br />
-                    <div className="login-form" >
+                    <h1> <span className="ibm-form-title"></span> WELCOME TO IBM-iX </h1>
+
+                    <div className="ibm-login-form" >
 
                         <div className="nav-buttons">
-                            <h5  id="login_heading">Login to Create Case Study</h5>
+                            <h5  id="ibm-login-sub-heading">Login to Create Case Study</h5>
                         </div>
                         <div className="col-lg-12">
                         <div className="form-group">
-                            <label htmlFor="name">User Name:</label>
+                            <label htmlFor="name">User Name</label>
                             <input placeholder="Please enter user name " onChange={event => {setUserName(event.target.value) }} type="text" className="form-control input" id="name"/>
                         </div>
                         </div>
 
                         <div className="col-lg-12">
                         <div className="form-group">
-                            <label htmlFor="password">Password:</label>
+                            <label htmlFor="password">Password</label>
                             <input placeholder="Please enter password " onChange={event => {setPassword(event.target.value)}} type="password" className="form-control input" id="password"/>
                         </div>
                         </div>
 
                         <div className="col-lg-12 text-center">
-                        <button className="btn btn-primary"  id="login-btn" type="submit">LOGIN</button>
+                        <button className="btn btn-primary" id="ibm-login-btn" type="submit">LOGIN</button>
                         </div>
                     </div>
 

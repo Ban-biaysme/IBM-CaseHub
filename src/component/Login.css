@@ -1,60 +1,77 @@
-.main-div{
-    background-image: url(bg-img1.png);
+.ibm-main-div{
     background-size: cover;
     background-position: center center;
 }
 
-.login-form{
-    height: 70vh;
+.ibm-login-form{
+    height: 75vh;
     box-sizing: border-box;
+    margin-top: 0;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 2em;
+    padding: 0;
     border-radius: 5px;
-    box-shadow: 0px 2px 7px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 7px rgba(74, 72, 72, 0.2);
     overflow: hidden;
-    color: #ffffff;
-    background: linear-gradient(rgb(57, 136, 143), rgb(71, 76, 76));
+    background: linear-gradient(rgb(247, 252, 252), rgb(207, 234, 241));
     background-size: cover;
 }
-
-#login_heading{
-    color: rgb(2, 47, 47);
+form h1{
+    color: rgb(237, 248, 248);
+}
+.ibm-form-title{
+    color: rgb(237, 248, 248);
     text-transform: uppercase;
-    font-weight: 600;
-    font-size: 18px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 36px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.ibm-form-title span{
+    color: #c7e1ea;
 }
 
-#login-btn{
+#ibm-login-btn{
     font-weight: 700;
     text-transform: uppercase;
     font-size: 1em;
     text-align: center;
-    color: rgb(28, 27, 27);
+    color: rgb(241, 245, 244);
     padding: 8px 0px;
-    width: 50%;
+    width: 70%;
     height:35px;
     border: none;
     border-radius: 20px;
     margin-top: 23px;
-    background-color: #90ddf1;
+    background-color: #132788;
+}
+
+#ibm-login-sub-heading{
+    color: #1f1f1e;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    /*font-size: 18px;*/
+    /*letter-spacing: .05em;*/
+    padding-bottom: 20px;
 }
 
 form{
     position:relative;
     z-index: 1;
-    background: rgb(2, 34, 48);
+    background: linear-gradient(rgb(16, 16, 103), rgb(39, 86, 134));
+    box-shadow: 0 2px 6px rgba(221, 213, 213, 0.26);
     max-width: 450px;
-    margin:0 auto 100px ;
+    margin:0 auto 0 ;
     padding:45px;
     text-align: center;
 }
 
 .form input{
-    outline:1;
     font-family: "Roboto", sans-serif;
     padding:25px;
-    background: #f2f2f2;
+    background: #d8ecf1;
     border: none;
     width: 100%;
     margin: 0 0 15px;
@@ -67,7 +84,7 @@ form{
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     padding:15px;
-    background: rgb(87, 222, 234);
+    background: rgb(2, 29, 31);
     box-sizing: border-box;
     width: 100%;
     transition: .5s;
@@ -80,19 +97,18 @@ form{
 
 .nav-buttons{
     width:100%;
-    height: 100px;
-    padding-top: 40px;
+    padding-top: 20px;
     opacity: 1;
-    margin-bottom:.3em;
+    font-weight: 700;
 }
 
 .form button:hover, .form button:active{
-    background: rgb(129, 216, 243);
+    background: rgb(118, 120, 121);
     opacity: 0.7;
 }
 
 label {
-    color: rgb(116, 218, 233);
+    color: rgb(1, 20, 22);
     font-weight: 600;
 }
 
@@ -102,6 +118,9 @@ label {
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 .form-control:focus {
-    border-color: #276262;
+    border-color: #d4e3e3;
     box-shadow: none;
+}
+button:focus{
+    outline: 0px;
 }
