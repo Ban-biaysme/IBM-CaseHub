@@ -1,5 +1,12 @@
 import React from 'react';
 import Axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+// import Modal from "react-bootstrap/Modal";
+
+import "./CreateCaseStudy.css";
+
+
 
 export class CreateCaseStudy extends React.Component{
     constructor(props){
@@ -40,9 +47,9 @@ export class CreateCaseStudy extends React.Component{
 
     render() {
         return (
-            <div>
+            <div className="ibm-main-div">
                 <div className="col-lg-12 text-center">
-                    <h1><span className="title">CREATE PROJECT</span> CASE STUDY</h1>
+                    <h1><span className="ibm-form-title">  PROJECT CASE STUDY</span></h1>
                     <br/><br/>
                 </div>
 
@@ -60,7 +67,6 @@ export class CreateCaseStudy extends React.Component{
                         <div className="controls">
                             <label>Industry:</label>
                             <select id="Project_industry" name="industry" className="form-control" required
-                                    data-validation-required-message="select an Industry"
                                     onChange={event => {this.setState({Project_industry:event.target.value})}} >
                                 <option disabled selected value="0">-- Select an option--</option>
                                 <option value="banking">Banking</option>
@@ -107,7 +113,6 @@ export class CreateCaseStudy extends React.Component{
                         <div className="controls">
                             <label>Project Type:</label>
                             <select id="Project_type" name="type" className="form-control" required
-                                    data-validation-required-message="select an Industry"
                                     onChange={event => {this.setState({Project_type:event.target.value})}}>
                                 <option disabled selected value="0">-- Select an option--</option>
                                 <option value="agile">Agile</option>
@@ -143,59 +148,131 @@ export class CreateCaseStudy extends React.Component{
 
 
                 <div className="row">
-                    <div className="col-lg-12 mb-4">
 
-                        <div className="control-group form-group">
-                            <div className="controls">
-                                <label>Problem :</label>
-                                <textarea id="problem_space" name="comments" rows="5" cols="30" className="form-control"
-                                          data-validation-required-message="Please enter your message"
-                                          maxLength="999"
-                                          onChange={event => {this.setState({problem_space:event.target.value})}}/>
+                    <div className="col-lg-12 text-center">
+                        <button className="btn btn-primary" id="ibm-project-description" type="button" data-toggle="collapse"
+                                    data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                                PLEASE ADD PROJECT DESCRIPTION
+                        </button>
+                    </div>
+
+                    <div className="col-lg-12 text-center">
+                        <div className="collapse" id="collapseExample">
+                            <div className="card card-body">
+                                {/*Beginning of the collapsed section */}
+
+                                <div className="row">
+                                <div className="col-lg-6 mb-4">
+                                    <div className="control-group form-group">
+                                        <div className="controls">
+                                            <h5> PROJECT PROBLEM :</h5>
+                                            <textarea id="problem_space" name="comments" rows="3" cols="10" className="form-control"
+                                                     placeholder="Please enter project problem"
+                                                      maxLength="999"
+                                                      onChange={event => {this.setState({problem_space:event.target.value})}}/>
+                                        </div>
+                                    </div>  {/* end of Problem */}
+                                </div>
+
+                                <div className="col-lg-6 mb-4">
+                                    <div className="control-group form-group">
+                                        <div className="controls">
+                                            <h5>PROJECT APPROACH :</h5>
+                                            <textarea id="approach" name="comments" rows="3" cols="10" className="form-control"
+                                                      placeholder="Please enter project approach"
+                                                      maxLength="999"
+                                                      onChange={event => {this.setState({approach:event.target.value})}}/>
+                                        </div>
+                                    </div>  {/* end of Approach */}
+                                </div>
+                                </div>
+
+                                <div className="row">
+                                <div className="col-lg-6 mb-4">
+                                    <div className="control-group form-group">
+                                        <div className="controls">
+                                            <h5>PROJECT IDEA :</h5>
+                                            <textarea id="idea" name="comments" rows="5" cols="30" className="form-control"
+                                                      placeholder="Please enter project idea"
+                                                      maxLength="999"
+                                                      onChange={event => {this.setState({idea:event.target.value})}}/>
+                                        </div>
+                                    </div> {/* end of Idea */}
+                                </div>
+                                <div className="col-lg-6 mb-4">
+                                    <div className="control-group form-group">
+                                        <div className="controls">
+                                            <h5> PROJECT IMPACT :</h5>
+                                            <textarea id="impact" name="comments" rows="3" cols="10" className="form-control"
+                                                      placeholder="Please enter project impact"
+                                                      maxLength="999"
+                                                      onChange={event => {this.setState({impact:event.target.value})}}/>
+                                        </div>
+                                    </div> {/* end of Impact */}
+                                </div>
+                                </div>
+                                {/*End of the collapsed section */}
+
                             </div>
-                        </div>  {/* end of Problem */}
-
-                        <div className="control-group form-group">
-                            <div className="controls">
-                                <label>Approach :</label>
-                                <textarea id="approach" name="comments" rows="5" cols="30" className="form-control"
-                                          data-validation-required-message="Please enter your message"
-                                          maxLength="999"
-                                          onChange={event => {this.setState({approach:event.target.value})}}/>
-                            </div>
-                        </div>  {/* end of Approach */}
-
-                        <div className="control-group form-group">
-                            <div className="controls">
-                                <label>Idea :</label>
-                                <textarea id="idea" name="comments" rows="5" cols="30" className="form-control"
-                                          data-validation-required-message="Please enter your message"
-                                          maxLength="999"
-                                          onChange={event => {this.setState({idea:event.target.value})}}/>
-                            </div>
-                        </div> {/* end of Idea */}
-
-                        <div className="control-group form-group">
-                            <div className="controls">
-                                <label>Impact :</label>
-                                <textarea id="impact" name="comments" rows="5" cols="30" className="form-control"
-                                          data-validation-required-message="Please enter your message"
-                                          maxLength="999"
-                                          onChange={event => {this.setState({impact:event.target.value})}}/>
-                            </div>
-                        </div> {/* end of Impact */}
-
+                        </div>
                     </div>
                 </div>
+
+                    {/*<div className="col-lg-6 mb-4">*/}
+                    {/*    <div className="control-group form-group">*/}
+                    {/*        <div className="controls">*/}
+                    {/*            <label>Problem :</label>*/}
+                    {/*            <textarea id="problem_space" name="comments" rows="5" cols="20" className="form-control"*/}
+                    {/*                      data-validation-required-message="Please enter your message"*/}
+                    {/*                      maxLength="999"*/}
+                    {/*                      onChange={event => {this.setState({problem_space:event.target.value})}}/>*/}
+                    {/*        </div>*/}
+                    {/*    </div>  /!* end of Problem *!/*/}
+                    {/*</div>*/}
+                    {/*<div className="col-lg-6 mb-4">*/}
+                    {/*    <div className="control-group form-group">*/}
+                    {/*        <div className="controls">*/}
+                    {/*            <label>Approach :</label>*/}
+                    {/*            <textarea id="approach" name="comments" rows="5" cols="30" className="form-control"*/}
+                    {/*                      data-validation-required-message="Please enter your message"*/}
+                    {/*                      maxLength="999"*/}
+                    {/*                      onChange={event => {this.setState({approach:event.target.value})}}/>*/}
+                    {/*        </div>*/}
+                    {/*    </div>  /!* end of Approach *!/*/}
+                    {/*</div>*/}
+
+                    {/*<div className="col-lg-6 mb-4">*/}
+                    {/*    <div className="control-group form-group">*/}
+                    {/*        <div className="controls">*/}
+                    {/*            <label>Idea :</label>*/}
+                    {/*            <textarea id="idea" name="comments" rows="5" cols="30" className="form-control"*/}
+                    {/*                      data-validation-required-message="Please enter your message"*/}
+                    {/*                      maxLength="999"*/}
+                    {/*                      onChange={event => {this.setState({idea:event.target.value})}}/>*/}
+                    {/*        </div>*/}
+                    {/*    </div> /!* end of Idea *!/*/}
+                    {/*</div>*/}
+                    {/*<div className="col-lg-6 mb-4">*/}
+                    {/*    <div className="control-group form-group">*/}
+                    {/*        <div className="controls">*/}
+                    {/*            <label>Impact :</label>*/}
+                    {/*            <textarea id="impact" name="comments" rows="5" cols="30" className="form-control"*/}
+                    {/*                      data-validation-required-message="Please enter your message"*/}
+                    {/*                      maxLength="999"*/}
+                    {/*                      onChange={event => {this.setState({impact:event.target.value})}}/>*/}
+                    {/*        </div>*/}
+                    {/*    </div> /!* end of Impact *!/*/}
+
+                    {/*</div>*/}
 
                 <div className="col-lg-12 text-center">
                     <div>
-                        <button className="btn btn-success" id="save-form-btn" onClick={() => this.addCaseStudy()}> SAVE CASE STUDY</button>
+                        <button className="btn btn-success" id="ibm-save-btn" onClick={() => this.addCaseStudy()}> SAVE CASE STUDY</button>
                     </div>
+                    <br />
                 </div>
+        </div>
 
-            </div>
-        // end of the main div
         )
 
     }

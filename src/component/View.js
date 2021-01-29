@@ -27,17 +27,16 @@ export class View extends React.Component{
                     <table className="table">
                         <thead>
                             <tr> <th> Project ID</th>
-
                                 <th> Project Name</th>
                                 <th> Project Type</th>
                                 <th> Industry</th>
-
                                 <th> Client Name </th>
-                                <th> Project Start  Date </th>
-                                <th> Project End  Date </th>
-                                <th> Problem Space</th>
-                                <th> Project Idea </th>
-                                <th> Project Impact </th>
+                                <th> Start Date </th>
+                                <th> End Date </th>
+                                <th> Problem </th>
+                                <th> Approach </th>
+                                <th>  Idea </th>
+                                <th>  Impact </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,8 +46,9 @@ export class View extends React.Component{
                                 <tr> <td> {val.project_id}</td>
 
                                     <td> {val.project_name}</td>
-                                    <td> {val.Project_industry}</td>
                                     <td> {val.Project_type}</td>
+                                    <td> {val.Project_industry}</td>
+
                                     <td> {val.client_name}</td>
                                     <td> {val.Project_start_date}</td>
                                     <td> {val.Project_end_date}</td>
