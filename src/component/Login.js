@@ -18,6 +18,7 @@ export function Login({setToken}) {
         }).then((res) => {
             if(res.data['login'] === 'success') {
                 setToken('res.data')
+                console.log( setToken('res.data'));
 
             } else {
                 alert('Invalid Username or password !!');
