@@ -16,7 +16,6 @@ Button.propTypes = {
 
 export class Home extends React.Component{
 
-
     onChange;
 
     searchCaseStudy() {
@@ -43,7 +42,7 @@ export class Home extends React.Component{
                         </div>
 
                     </div>
-                        <div className="col-md-3">
+                        <div className="col-lg-3">
 
                             <div className="control-group form-group">
                                 <div className="controls">
@@ -62,7 +61,7 @@ export class Home extends React.Component{
 
                         </div>
 
-                        <div className="col-md-3">
+                        <div className="col-lg-3">
                             <div className="control-group form-group">
                                 <div className="controls">
                                     <label>Project Type:</label>

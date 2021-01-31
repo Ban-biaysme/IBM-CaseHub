@@ -9,7 +9,6 @@ import {
 }
 from 'react-router-dom';
 import {Home}  from "./component/Home";
-import {CreateCS}  from "./component/CreateCS";
 import {View}  from "./component/View";
 import {Login} from "./component/Login";
 import {CreateCaseStudy} from "./component/CreateCaseStudy";
@@ -25,19 +24,6 @@ function App() {
     }
 
     return (
-        // <Router>
-        //     <div className="container-fluid">
-        //         <MainNavigation />
-        //         <main>
-        //             <Switch>
-        //                 <Route path="/" excat component={Home}/>
-        //                 <Route path="/cs" excat component={CreateCS}/>
-        //                 <Route path="/view" excat component={View}/>
-        //                 {/*<Route path="/login" excat component={Login}/>*/}
-        //             </Switch>
-        //         </main>
-        //     </div>
-        // </Router>
             <Router>
                 <div className="container-fluid">
                 <MainNavigation />
