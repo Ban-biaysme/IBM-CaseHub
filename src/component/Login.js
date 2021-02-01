@@ -3,26 +3,28 @@ import PropTypes from 'prop-types';
 import Axios from "axios";
 // import '../App.css';
 import './Login.css';
+export default Login;
 
-export function Login({setToken}) {
+Login.propTypes = {
+    setToken: PropTypes.func.isRequired
+}
 
-    const [username, setUserName] = useState('');
-    const [password, setPassword] = useState('');
+function Login({setToken, serverURI}) {
+    const [username, setUsername] = React.useState('');
+    const [password, setPassword] = React.useState('');
 
-    const login = e=> {
+    const login = e => {
         e.preventDefault();
 
-        Axios.post('http://3.104.104.28:3001/login', {
-            username: {username},
-            password: {password}
-        }).then((res) => {
-            if(res.data['login'] === 'success') {
-                setToken('res.data')
-
-            } else {
-                alert('Invalid Username or password !!');
-            }
-        });
+        Axios
+            .post(`${serverURI}/login`, {
+                username: {username},
+                password: {password}
+            })
+            .then((res) => {
+                console.log(serverURI)
+                res.data['login'] === 'success' ? setToken('res.data') : alert('Invalid Username or password !!');
+            });
     }
 
     return (
@@ -37,7 +39,7 @@ export function Login({setToken}) {
                     <div className="col-lg-12">
                         <div className="form-group">
                             <label htmlFor="name">User Name:</label>
-                            <input placeholder="Please enter user name " onChange={event => {setUserName(event.target.value) }} type="text" className="form-control input" id="name"/>
+                            <input placeholder="Please enter user name " onChange={event => {setUsername(event.target.value) }} type="text" className="form-control input" id="name"/>
                         </div>
                     </div>
 
@@ -58,7 +60,4 @@ export function Login({setToken}) {
     )
 }
 
-Login.propTypes = {
-    setToken: PropTypes.func.isRequired
-}
 

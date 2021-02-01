@@ -11,16 +11,15 @@ import "./CreateCaseStudy.css";
 export class CreateCaseStudy extends React.Component{
     constructor(props){
         super(props);
-        this.state={project_name:'', Project_industry:'', country:'', client_name:'',client_Code_name:'',
-            address:'', phone:'', email:'', Project_start_date:'',
-            Project_end_date:'', problem_space:'', approach:'', idea:'', impact:''};
-
+        this.state={project_name:'', project_industry:'', country:'', city:'', client_name:'',client_code_name:'',
+            client_address:'', client_phone:'', client_email:'', project_start_date:'',
+            project_end_date:'', problem_space:'', approach:'', idea:'', impact:''};
     }
 
     addCaseStudy(){
-        Axios.post('http://3.104.104.28:3001/insert-cs', {
+        Axios.post(`${this.props.serverURI}/create`, {
             project_name: this.state.project_name,
-            Project_industry: this.state.Project_industry,
+            project_industry: this.state.project_industry,
             country: this.state.country,
             city: this.state.city,
             client_name: this.state.client_name,
@@ -28,8 +27,8 @@ export class CreateCaseStudy extends React.Component{
             client_address: this.state.address,
             client_phone: this.state.phone,
             client_email: this.state.email,
-            Project_start_date: this.state.Project_start_date,
-            Project_end_date: this.state.Project_end_date,
+            project_start_date: this.state.project_start_date,
+            project_end_date: this.state.project_end_date,
             problem_space: this.state.problem_space,
             approach: this.state.approach,
             idea: this.state.idea,
@@ -38,14 +37,6 @@ export class CreateCaseStudy extends React.Component{
         }).then(()=> {
             alert('Case study added successfully!!!!')
         });
-
-        console.log(this.state.project_name);
-        console.log(this.state.Project_industry);
-        console.log(this.state.client_name);
-        console.log(this.state.Project_start_date);
-        console.log(this.state.Project_end_date);
-        console.log(this.state.problem_space);
-        console.log(this.state.Project_end_date);
     }
 
     render() {
@@ -74,7 +65,7 @@ export class CreateCaseStudy extends React.Component{
                         <div className="controls">
                             <label>Industry:</label>
                             <select id="Project_industry" name="industry" className="form-control" required
-                                    onChange={event => {this.setState({Project_industry:event.target.value})}} >
+                                    onChange={event => {this.setState({project_industry:event.target.value})}} >
                                 <option disabled selected value="0">-- Select an option--</option>
                                 <option value="banking">Banking</option>
                                 <option value="healthcare"> Heath Care</option>
@@ -92,7 +83,7 @@ export class CreateCaseStudy extends React.Component{
                             <input type="date" id="startdate" name="checkin" placeholder="Checking in date YYYY-mm-dd*"
                                    min='1899-01-01' className="form-control py-3 px-3" required="required"
                                    data-validation-required-message="Please enter project start date."
-                                   onChange={event => {this.setState({Project_start_date:event.target.value})}} />
+                                   onChange={event => {this.setState({project_start_date:event.target.value})}} />
                             <div className="input-group-append"><span className="input-group-text px-3"><i
                                 className="fas fa-clock"></i></span></div>
                         </div>
@@ -131,7 +122,7 @@ export class CreateCaseStudy extends React.Component{
                             <input type="date" id="enddate" name="checkin" placeholder="Checking in date YYYY-mm-dd*"
                                    min='1899-01-01' className="form-control py-3 px-3" required="required"
                                    data-validation-required-message="Please enter project end date."
-                                   onChange={event => {this.setState({Project_end_date:event.target.value})}}/>
+                                   onChange={event => {this.setState({project_end_date:event.target.value})}}/>
                             <div className="input-group-append"><span className="input-group-text px-3"><i
                                 className="fas fa-clock"></i></span>
                             </div>
@@ -237,7 +228,7 @@ export class CreateCaseStudy extends React.Component{
 
                                                     <div className="controls">
                                                         <label htmlFor="phone">Contact Number</label>
-                                                        <input onChange={event => {this.setState({phone:event.target.value})}} type="text" className="form-control" id="phone"/>
+                                                        <input onChange={event => {this.setState({client_phone:event.target.value})}} type="text" className="form-control" id="phone"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -246,11 +237,11 @@ export class CreateCaseStudy extends React.Component{
                                                 <div className="control-group form-group">
                                                     <div className="controls">
                                                         <label htmlFor="address">Address</label>
-                                                        <input onChange={event => {this.setState({address:event.target.value})}} type="text" className="form-control" id="address"/>
+                                                        <input onChange={event => {this.setState({client_address:event.target.value})}} type="text" className="form-control" id="address"/>
                                                     </div>
                                                     <div className="controls">
                                                         <label htmlFor="email">Email ID</label>
-                                                        <input onChange={event => {this.setState({email:event.target.value})}} type="text" className="form-control" id="email"/>
+                                                        <input onChange={event => {this.setState({client_email:event.target.value})}} type="text" className="form-control" id="email"/>
                                                     </div>
 
                                                 </div> {/*end of client email and address*/}
