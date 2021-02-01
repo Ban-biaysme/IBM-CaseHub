@@ -16,6 +16,7 @@ import {Login} from "./component/Login";
 import {CreateCaseStudy} from "./component/CreateCaseStudy";
 import {Export}  from "./component/Export";
 import MainNavigation from './component/Navigation/MainNavigation';
+import CaseStudy from "./casestudy/pages/CaseStudy";
 
 
 function App() {
@@ -26,19 +27,7 @@ function App() {
     }
 
     return (
-        // <Router>
-        //     <div className="container-fluid">
-        //         <MainNavigation />
-        //         <main>
-        //             <Switch>
-        //                 <Route path="/" excat component={Home}/>
-        //                 <Route path="/cs" excat component={CreateCS}/>
-        //                 <Route path="/view" excat component={View}/>
-        //                 {/*<Route path="/login" excat component={Login}/>*/}
-        //             </Switch>
-        //         </main>
-        //     </div>
-        // </Router>
+
             <Router>
                 <div className="container-fluid">
                 <MainNavigation />
@@ -55,6 +44,9 @@ function App() {
                         {/*Route to the View component*/}
                         <Route path="/view"exact>
                             <View />
+                        </Route>
+                        <Route path="/:userId/CaseStudy" exact>
+                            <CaseStudy />
                         </Route>
                         {/*Route to the login component*/}
                         <Route path="/login"exact>

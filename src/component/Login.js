@@ -12,13 +12,16 @@ export function Login({setToken}) {
     const login = e=> {
        e.preventDefault();
 
-        Axios.post('http://3.104.104.28:3001/login', {
+        Axios.post('http://localhost:3001/login', {
             username: {username},
             password: {password}
         }).then((res) => {
             if(res.data['login'] === 'success') {
-                setToken('res.data')
-                console.log( setToken('res.data'));
+                console.log( res.data.login);
+                console.log( res.data.uName);
+                setToken(res.data.login);
+                setUserName(res.data.uName);
+
 
             } else {
                 alert('Invalid Username or password !!');
