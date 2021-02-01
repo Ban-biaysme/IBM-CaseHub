@@ -1,6 +1,8 @@
 import React from 'react';
 import Axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Cases from "../casestudy/pages/Cases";
+import Avatar from "../casestudy/components/Avatar";
 
 export class View extends React.Component{
     constructor(props){
@@ -20,9 +22,15 @@ export class View extends React.Component{
     }
 
     render(){
+
         return(
+
             <div className="container">
                 <h1> CASE STUDY RECORDS </h1>
+                <div>
+                    <Cases/>
+                </div>
+
                 <div className="table-responsive">
                     <table className="table">
                         <thead>
@@ -46,12 +54,12 @@ export class View extends React.Component{
                                 <tr> <td> {val.project_id}</td>
 
                                     <td> {val.project_name}</td>
-                                    <td> {val.Project_type}</td>
-                                    <td> {val.Project_industry}</td>
+                                    <td> {val.project_type}</td>
+                                    <td> {val.project_industry}</td>
 
                                     <td> {val.client_name}</td>
-                                    <td> {val.Project_start_date}</td>
-                                    <td> {val.Project_end_date}</td>
+                                    <td> {val.project_start_date}</td>
+                                    <td> {val.project_end_date}</td>
                                     <td> {val.problem_space}</td>
                                     <td> {val.approach}</td>
                                     <td> {val.idea}</td>

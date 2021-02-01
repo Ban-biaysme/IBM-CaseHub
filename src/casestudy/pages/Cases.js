@@ -1,8 +1,5 @@
 import React,{useState,useEffect} from 'react';
-
-
 import CaseList from "../components/CaseList";
-import axios from "D:/React/ibm-case-study-project-frontend/src/component/axios";
 import Axios from "axios";
 
 let CASES = [];
@@ -17,14 +14,19 @@ export default class Cases extends React.Component{
     //call this on page load
     componentDidMount() {
         //communicate with backend
-        Axios.get('http://localhost:3001/get-all').then((res) => {
+
+        Axios.get(`${this.props.serverURI}/view-all`).then((res) => {
             this.setState({data:res.data});
-            console.log(res.data);
+            console.log("cases"+res.data);
         });
     }
 
     render(){
+
         CASES=[];
+
+        console.log("i am "+CASES.length);
+        console.log("i am "+this.state.data);
         //let id;
         Array.from(this.state.data).map((val)=> {
             CASES.push(
@@ -36,6 +38,7 @@ export default class Cases extends React.Component{
                 });
             //id = val._id;
         })
+        console.log("i am "+CASES.length);
         let listobj = <CaseList items={CASES}/>;
         return listobj;
 
