@@ -13,7 +13,7 @@ export class View extends React.Component{
     //call this on page load
     componentDidMount() {
         //communicate with backend
-        Axios.get('http://localhost:3001/get-all').then((res) => {
+        Axios.get(`${this.props.serverURI}/view-all`).then((res) => {
             this.setState({data:res.data});
             console.log(res.data);
         });

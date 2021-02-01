@@ -1,19 +1,15 @@
-.ibm-main-div{
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
+.ibm-main-div {
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 0px 2px 7px rgba(74, 72, 72, 0.2);
-    overflow: hidden;
-    background: linear-gradient(rgb(201, 229, 229), rgb(207, 234, 241));
+    background-image: url(pic3.jpg);
     background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 h4{
     font-weight: bolder;
-    text-decoration-line: underline;
+    text-transform: uppercase;
 }
-
 
 .ibm-create-form{
     width:90%;
@@ -28,6 +24,21 @@ h4{
     background: linear-gradient(rgb(247, 252, 252), rgb(207, 234, 241));
     background-size: cover;
 }
+
+.ibm-project-description{
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1em;
+    color: rgb(241, 245, 244);
+    padding: 8px 0px;
+    width: 50%;
+    height:60px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 23px;
+    background-color: #011e2f;
+}
+
 .ibm-form-title{
     color: rgb(41, 45, 45);
     text-transform: uppercase;
@@ -41,20 +52,31 @@ h4{
 .ibm-form-title span{
     color: #414545;
 }
+.btn-xl {
+    font-size: 18px;
+    padding: 10px 40px;
+}
 
-#ibm-save-btn{
+.btn-primary {
+    background-color: #1626b8;
+    border-color: #131313;
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+    background-color: #a0f1ee !important;
+    border-color: #171818 !important;
+    color: rgb(39, 38, 38);
+}
+
+#ibm-save-btn, #ibm-save-draft-btn{
     font-weight: 700;
     text-transform: uppercase;
     font-size: 1em;
     text-align: center;
-    color: rgb(241, 245, 244);
-    padding: 8px 0px;
-    width: 30%;
+    margin: 20px;
     height:45px;
     border: none;
-    border-radius: 20px;
-    margin-top: 23px;
-    background-color: #132788;
+    border-radius: 10px;
 }
 .form-group {
     margin-bottom: 25px;
@@ -63,9 +85,10 @@ h4{
 .form-group input,.form-group textarea {
     padding: 20px;
 }
+
 .form-group input{
     width:100%;
-    height: 35px;
+    height: 25px;
     padding-left: 15px;
     border:none;
     border-radius: 5px;
@@ -76,33 +99,25 @@ h4{
 .form-group label{
     text-transform: uppercase;
     font-size: 16px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .form-group input.form-control {
-    height: auto;
+    height:42px;
 }
-
 .form-group textarea.form-control {
     height: 150px;
     border: 1px solid #1f1f1e;
 }
 
-#ibm-project-description{
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 1em;
-    color: rgb(241, 245, 244);
-    padding: 8px 0px;
-    width: 100%;
-    height:60px;
-    border: none;
-    border-radius: 5px;
-    margin-top: 23px;
-    background-color: #07145a;
+.form-control:focus {
+    border-color: #044b5d;
+    box-shadow: none;
 }
+
 
 h5{
     font-weight: 600;
     color: rgb(7, 31, 53);
+    text-align: center;
 }
