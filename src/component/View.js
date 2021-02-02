@@ -22,7 +22,9 @@ export class View extends React.Component{
     }
 
     render(){
+
         return(
+
             <div className="container">
                 <h1> CASE STUDY RECORDS </h1>
                 <div>
@@ -52,6 +54,7 @@ export class View extends React.Component{
                                 <tr> <td> {val.project_id}</td>
 
                                     <td> {val.project_name}</td>
+                                    <td> {val.project_type}</td>
                                     <td> {val.project_industry}</td>
 
                                     <td> {val.client_name}</td>

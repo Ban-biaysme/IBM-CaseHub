@@ -9,7 +9,6 @@ import {Export}  from "./component/Export";
 import MainNavigation from './component/Navigation/MainNavigation';
 import Cases from "./casestudy/pages/Cases";
 import CaseStudy from "./casestudy/pages/CaseStudy";
-import {IndiView}  from "./component/IndividualView.js";
 export default App;
 
 const serverURI = 'http://127.0.0.1:3001';
@@ -40,9 +39,10 @@ function App() {
                         <Route path="/view" exact>
                             <View serverURI={serverURI}/>
                         </Route>
-                        <Route path="/:CaseId/CaseStudy" exact>
-                            <CaseStudy serverURI={serverURI}/>
-                        </Route>
+                        <Route path="/CaseStudy/:CaseId" component={CaseStudy}/>
+                        {/*<Route path="/:CaseId/CaseStudy" exact>*/}
+                        {/*    <CaseStudy serverURI={serverURI}/>*/}
+                        {/*</Route>*/}
                         {/*Route to the Login component*/}
                         <Route path="/Cases" exact>
                             <Cases serverURI={serverURI} />
@@ -53,9 +53,6 @@ function App() {
                         {/*Route to the Export component*/}
                         <Route path="/export" exact>
                             <Export />
-                        </Route>
-                        <Route path="/IndiView"exact>
-                            <IndiView />
                         </Route>
                         <Redirect to="/" />
                     </Switch>
