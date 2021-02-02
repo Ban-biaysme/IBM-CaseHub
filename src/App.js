@@ -39,9 +39,10 @@ function App() {
                         <Route path="/view" exact>
                             <View serverURI={serverURI}/>
                         </Route>
-                        <Route path="/:CaseId/CaseStudy" exact>
-                            <CaseStudy serverURI={serverURI}/>
-                        </Route>
+                        <Route path="/CaseStudy/:CaseId" component={CaseStudy}/>
+                        {/*<Route path="/:CaseId/CaseStudy" exact>*/}
+                        {/*    <CaseStudy serverURI={serverURI}/>*/}
+                        {/*</Route>*/}
                         {/*Route to the Login component*/}
                         <Route path="/Cases" exact>
                             <Cases serverURI={serverURI} />
