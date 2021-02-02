@@ -24,72 +24,46 @@ export class IndiView extends React.Component{
         return (
             // Array.from(this.state.data).map((val)=>
                 <div className="ibm-main-div">
-                    <div className="container heading ibm-div-padding">
-                        <h1 className="text-color"> CASE STUDY RECORD </h1>
+
+                    <div className="container heading">
+                        <h1 className="text-color"> <p>{/*{val.project_name}*/} ANZ BANK web app </p></h1>
                     </div>
 
-                    <div className="row ibm-div-padding" >
+                    <div className="row ibm-div-padding">
+                        <div className="col-lg-3 mb-4 text-left ">
+                                <h5 className="text-color"> Project Name :
+                                    <span className="data"> anz bank app  {/*{val.project_name}*/} </span>
+                                </h5>
+                        </div>
+
+                        <div className="col-lg-3 mb-4 text-left ">
+                            <h5 className="text-color"> Industry :
+                                <span className="data"> anz bank app  {/*{val.project_name}*/} </span>
+                            </h5>
+                        </div>
+
+
+                    </div>
+
+
+                    <div>
+
                         <div className="col-lg-3 mb-4 text-left ">
                             <div>
-                                <h5 className="text-color"> Project Name :
+                                <h5 className="text-color"> Industry :
                                     {/*<p> anz bank app /!*{val.project_name}*!/ </p>*/}
-                                </h5>
-                            </div>
-                            <div>
-                                <h5 className="text-color">
-                                    Industry :
-                                {/*    <p>*/}
-                                {/*    Banking*/}
-                                {/*    /!*{val.project_name}*!/*/}
-                                {/*</p>*/}
-                                </h5>
-                            </div>
-                            <div>
-                                <h5 className="text-color">
-                                    start_date :
-                                {/*    <p>*/}
-                                {/*    34-05346*/}
-                                {/*    /!*{val.project_name}*!/*/}
-                                {/*</p>*/}
-                                </h5>
-                            </div>
-                            <div>
-                                <h5 className="text-color">
-                                    start_end :
-                                {/*    <p>*/}
-                                {/*    34-05346*/}
-                                {/*    /!*{val.project_name}*!/*/}
-                                {/*</p>*/}
                                 </h5>
                             </div>
 
                         </div>
-                        {/*end of heading div*/}
-                        <div className="col-lg-3 mb-4 text-left">
+                        <div className="col-lg-3 mb-4 text-left ">
                             <div>
-                                <p> anz bank app </p>
-                                    {/*val.project_name */}
+                                <p> banking  </p>
+                            </div>
 
-                            </div>
-                            <div>
-                                <p> anz bank app </p>
-                                    {/*val.project_name */}
+                        </div>
+                    </div>
 
-                            </div>
-                            <div>
-                                <p>
-                                    anz bank app
-                                    {/*val.project_name */}
-                                </p>
-                            </div>
-                            <div>
-                                <p>
-                                    anz bank app
-                                    {/*val.project_name */}
-                                </p>
-                            </div>
-                    </div>
-                    </div>
 
                     {/*end of the row*/}
 
