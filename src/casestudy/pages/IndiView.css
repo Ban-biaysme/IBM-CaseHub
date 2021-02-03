@@ -1,0 +1,53 @@
+h5{
+    font-weight: 600;
+    color: white;
+}
+
+h1{
+    font-weight: 600;
+    color: white;
+}
+
+h2{
+    color:black;
+}
+
+.data{
+    color: white;
+    font-weight: normal;
+}
+.ibm-main-div1 {
+    background-color: #262626
+}
+
+.ibm-div2{
+background-color: #F4F4F4;
+}
+    /*margin-top: 0;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*padding: 10px;*/
+    /*overflow: hidden;*/
+    /*!*background-size: cover;*!*/
+    /*!*background-image: url(background.jpg);*!*/
+    /*background-color: #525252;*/
+    /*background-size: cover;*/
+    /*background-position: center center;*/
+
+
+/*.ibm-background-image{*/
+/*    background-image: url(background.jpg);*/
+/*    background-size: cover;*/
+/*    background-position: center center;*/
+/*    padding-bottom: 0;*/
+
+/*}*/
+
+
+.ibm-div-padding{
+    padding: 50px;
+}
+/*.data{*/
+/*    font-weight:normal;*/
+/*    font-size: 18px;*/
+/*}*/
