@@ -4,12 +4,11 @@ import {Route, Redirect, Switch, BrowserRouter as Router} from 'react-router-dom
 import {Home}  from "./component/Home";
 import {View}  from "./component/View";
 import Login from "./component/Login";
-import {CreateCaseStudy} from "./component/CreateCaseStudy";
 import UserCases  from "./casestudy/pages/UserCases";
 import MainNavigation from './component/Navigation/MainNavigation';
 import Cases from "./casestudy/pages/Cases";
 import CaseStudy from "./casestudy/pages/CaseStudy";
-import {CaseStudyForm} from "./component/CaseStudyForm";
+import CaseStudyForm from "./component/CaseStudyForm";
 export default App;
 
 const serverURI = 'http://127.0.0.1:3001';
@@ -34,11 +33,9 @@ function App() {
                         </Route>
 
                        {/*Route to the Create case study component*/}
-                        <Route path="/case-study" serverURI={serverURI} exact>
-                            {/*<CreateCaseStudy serverURI={serverURI}/>*/}
+                                           <Route path="/case-study" exact>
                             <CaseStudyForm serverURI={serverURI}/>
                         </Route>
-
                         {/*Route to the View component*/}
                         <Route path="/view" exact>
                             <View serverURI={serverURI}/>
@@ -56,7 +53,7 @@ function App() {
                             <Login  />
                         </Route>
                         {/*Route to the UserCases component*/}
-                        <Route path="/export" exact>
+                        <Route path="/mycases" exact>
                             <UserCases />
                         </Route>
                         <Redirect to="/" />

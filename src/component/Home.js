@@ -12,9 +12,6 @@ export class Home extends React.Component {
 
     onChange;
 
-    searchCaseStudy() {
-        return undefined;
-    }
 
     render() {
         return (

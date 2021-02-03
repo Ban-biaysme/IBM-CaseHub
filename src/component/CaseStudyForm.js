@@ -3,7 +3,7 @@ import Axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CaseStydyFormStyle.css";
 
-export class CaseStudyForm extends React.Component{
+export default  class CaseStudyForm extends React.Component{
     constructor(props){
         super(props);
         this.state={project_name:'', project_industry:'', country:'', city:'', client_name:'',client_code_name:'',

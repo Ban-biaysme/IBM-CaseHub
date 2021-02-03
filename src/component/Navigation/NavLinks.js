@@ -12,8 +12,8 @@ const NavLinks = props => {
       <NavLink to="/cases">View All</NavLink>
     </li>
     <li>
-      <NavLink to="/">My Cases</NavLink>
-      <NavLink to="/logout">Logoutt</NavLink>
+      <NavLink to="/mycases">My Cases</NavLink>
+      <NavLink to="/logout">Logout</NavLink>
     </li>
   </ul>
 };
