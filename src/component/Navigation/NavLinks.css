@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  text-align: left;
 }
 
 .nav-links li {
@@ -24,9 +24,9 @@
 .nav-links a:hover,
 .nav-links a:active,
 .nav-links a.active {
-  background: #cbf3f3;
-  border-color: #292929;
-  color: #161616;
+  /*background: #cbf3f3;*/
+  border-color: #0e5efd;
+  color: white;
 }
 
 .nav-links button {
@@ -72,5 +72,10 @@
   .nav-links button:active {
     background: #f8df00;
     color: #292929;
+  }
+
+  .line-sep{
+    color: #0e5efd;
+    align-items: center;
   }
 }
