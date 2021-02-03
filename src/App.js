@@ -9,6 +9,7 @@ import UserCases  from "./casestudy/pages/UserCases";
 import MainNavigation from './component/Navigation/MainNavigation';
 import Cases from "./casestudy/pages/Cases";
 import CaseStudy from "./casestudy/pages/CaseStudy";
+import {CaseStudyForm} from "./component/CaseStudyForm";
 export default App;
 
 const serverURI = 'http://127.0.0.1:3001';
