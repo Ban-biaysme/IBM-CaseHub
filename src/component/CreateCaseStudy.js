@@ -42,7 +42,7 @@ export class CreateCaseStudy extends React.Component{
     render() {
         return (
 
-            <div className="container-fluid">
+            <div>
 
             <div className="ibm-main-div">
 

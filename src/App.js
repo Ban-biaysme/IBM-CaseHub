@@ -24,7 +24,7 @@ function App() {
 
     return (
             <Router>
-                <div className="container-fluid">
+                <div>
                 <MainNavigation />
                 <main>
                     <Switch>

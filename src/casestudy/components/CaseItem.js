@@ -14,10 +14,12 @@ const CaseItem = props => {
             <Avatar image={props.image} alt={props.name} />
           </div>
           <div className="user-item__info">
-            <h2>{props.project_name}</h2>
-            <h3>
+            <h4>{props.project_name}</h4>
+            <h5>
               {props.client_name}
-            </h3>
+            </h5>
+            <h5>{props.project_industry}</h5>
+            <h5>{props.project_start_date}</h5>
           </div>
         </Link>
       </Card>

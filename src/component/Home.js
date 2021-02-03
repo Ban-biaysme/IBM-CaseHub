@@ -24,7 +24,7 @@ export class Home extends React.Component {
 
                     <br/><br/>
                 </div>
-                <div className="container">
+                <div className="container search-page">
                     <div className="input-group">
                         <input type="search" className="form-control" placeholder="Search for case studies" aria-label="Search"
                                aria-describedby="search-addon"/>
@@ -32,7 +32,7 @@ export class Home extends React.Component {
                     </div>
 
                     <div className="row justify-content-evenly">
-                        <div className="col-sm-3">
+                        <div>
 
                             <div className="control-group form-group">
                                 <div className="controls">
@@ -49,7 +49,7 @@ export class Home extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-sm-3">
+                        <div>
 
                             <div className="control-group form-group">
                                 <div className="controls">
@@ -67,18 +67,6 @@ export class Home extends React.Component {
                             </div>
                         </div>
                     </div>
-
-                    <div>
-                        <br></br>
-                        <div className="col-lg-12 text-center">
-                            <h6>Or</h6>
-                            <button className="btn btn-primary" type="submit">View all</button>
-                        </div>
-
-
-                    </div>
-
-
 
 
 
