@@ -158,58 +158,6 @@ export class EditCaseStudy extends React.Component{
 
                 <div className="row" >
 
-                    {/*<div className="col-lg-12 text-center">*/}
-                    {/*    <button className="btn btn-primary" className="ibm-project-description" type="button" data-toggle="collapse"*/}
-                    {/*            data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">*/}
-                    {/*        PLEASE ADD  CLIENT DESCRIPTION*/}
-                    {/*    </button>*/}
-                    {/*</div>*/}
-
-                    {/*<div className="col-lg-12 text-center">*/}
-                        {/*<div className="collapse" id="collapseExample">*/}
-                        {/*    <div className="card card-body">*/}
-                        {/*        /!*Beginning of the collapsed section *!/*/}
-
-                        {/*        <div className="row">*/}
-                        {/*            <div className="col-lg-6 mb-4">*/}
-                        {/*                <div className="control-group form-group">*/}
-                        {/*                    <div className="controls">*/}
-                        {/*                        <label htmlFor="client_name">Client Name</label>*/}
-                        {/*                        <input onChange={event => {this.setState({client_name:event.target.value})}} type="text" className="form-control" id="project_id"/>*/}
-                        {/*                    </div>*/}
-
-                        {/*                    <div className="controls">*/}
-                        {/*                        <label htmlFor="client_name">Contact Number</label>*/}
-                        {/*                        <input onChange={event => {this.setState({phone:event.target.value})}} type="text" className="form-control" id="project_id"/>*/}
-                        {/*                    </div>*/}
-                        {/*                </div>*/}
-                        {/*            </div>*/}
-
-                        {/*            <div className="col-lg-6 mb-4">*/}
-                        {/*                <div className="control-group form-group">*/}
-                        {/*                    <div className="controls">*/}
-                        {/*                        <label htmlFor="client_name">Address</label>*/}
-                        {/*                        <input onChange={event => {this.setState({address:event.target.value})}} type="text" className="form-control" id="project_id"/>*/}
-                        {/*                    </div>*/}
-                        {/*                    <div className="controls">*/}
-                        {/*                        <label htmlFor="client_name">Email ID</label>*/}
-                        {/*                        <input onChange={event => {this.setState({email:event.target.value})}} type="text" className="form-control" id="project_id"/>*/}
-                        {/*                    </div>*/}
-
-                        {/*                </div> /!*end of client email and address*!/*/}
-                        {/*            </div>*/}
-
-                        {/*        </div>*/}
-
-
-                        {/*        /!*End of the collapsed section  for client details*!/*/}
-
-                        {/*    </div>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
-                {/*   Client description  ending here */}
-
                     {/*// <!-- Modal content-->*/}
                     <div className="col-lg-12 text-center">
                         {/*// <!-- Trigger the modal with a button -->*/}
