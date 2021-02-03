@@ -2,7 +2,7 @@ import React from 'react';
 import Axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cases from "../casestudy/pages/Cases";
-import Avatar from "../casestudy/components/Avatar";
+import Icon from "../casestudy/components/Icon";
 
 export class View extends React.Component{
     constructor(props){
