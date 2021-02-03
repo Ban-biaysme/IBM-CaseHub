@@ -9,6 +9,7 @@ import {Export}  from "./component/Export";
 import MainNavigation from './component/Navigation/MainNavigation';
 import Cases from "./casestudy/pages/Cases";
 import CaseStudy from "./casestudy/pages/CaseStudy";
+import {CaseStudyForm} from "./component/CaseStudyForm"
 export default App;
 
 const serverURI = 'http://127.0.0.1:3001';
@@ -23,7 +24,7 @@ function App() {
 
     return (
             <Router>
-                <div className="container-fluid">
+                <div>
                 <MainNavigation />
                 <main>
                     <Switch>
@@ -31,17 +32,22 @@ function App() {
                         <Route path="/" exact>
                             <Home />
                         </Route>
-                        {/*Route to the Create case study component*/}
+
+                       {/*Route to the Create case study component*/}
                         <Route path="/case-study" serverURI={serverURI} exact>
-                            <CreateCaseStudy serverURI={serverURI}/>
+                            {/*<CreateCaseStudy serverURI={serverURI}/>*/}
+                            <CaseStudyForm serverURI={serverURI}/>
                         </Route>
+
                         {/*Route to the View component*/}
                         <Route path="/view" exact>
                             <View serverURI={serverURI}/>
                         </Route>
+
                         <Route path="/:CaseId/CaseStudy" exact>
                             <CaseStudy serverURI={serverURI}/>
                         </Route>
+
                         {/*Route to the Login component*/}
                         <Route path="/Cases" exact>
                             <Cases serverURI={serverURI} />
