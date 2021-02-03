@@ -1,12 +1,8 @@
 import React from 'react';
 import Axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 // import Modal from "react-bootstrap/Modal";
-
 import "./CreateCaseStudy.css";
-
-
 
 export class CreateCaseStudy extends React.Component{
     constructor(props){
@@ -85,7 +81,7 @@ export class CreateCaseStudy extends React.Component{
                                    data-validation-required-message="Please enter project start date."
                                    onChange={event => {this.setState({project_start_date:event.target.value})}} />
                             <div className="input-group-append"><span className="input-group-text px-3"><i
-                                className="fas fa-clock"></i></span></div>
+                                className="fas fa-clock"/></span></div>
                         </div>
                     </div>
 
@@ -124,7 +120,7 @@ export class CreateCaseStudy extends React.Component{
                                    data-validation-required-message="Please enter project end date."
                                    onChange={event => {this.setState({project_end_date:event.target.value})}}/>
                             <div className="input-group-append"><span className="input-group-text px-3"><i
-                                className="fas fa-clock"></i></span>
+                                className="fas fa-clock" /></span>
                             </div>
                         </div>
                     </div> {/*end of Project end date */}
@@ -421,7 +417,7 @@ export class CreateCaseStudy extends React.Component{
                         </div>
                     </div>
                 </div>
-                    </div>
+                </div>
                 {/*End of forth collapsable div*/}
 
                 <div className="col-lg-12 text-center">

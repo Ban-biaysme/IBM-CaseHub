@@ -1,17 +1,14 @@
-html,body,body *{
-    /*box-sizing: border-box;*/
-    padding:0px;
-    margin: 0px;
-    /*background-color:inherit;*/
-}
+/*html,body,body *{*/
+/*    !*box-sizing: border-box;*!*/
+/*    padding:0;*/
+/*    margin: 0;*/
+/*}*/
 
 body {
     overflow-x: hidden;
     font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
-/*.bg-dark {*/
-/*    background-color: #0a0a0a !important;*/
-/*}*/
+
 p {
     line-height: 1.75;
 }
@@ -48,3 +45,8 @@ button{
 button:focus{
     outline: 0px;
 }
+
+
+
+
+
