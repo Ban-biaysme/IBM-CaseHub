@@ -1,10 +1,8 @@
 .ibm-home-div {
     min-height: 100vh;
-    /*background-size: cover;*/
     background-image: url(search_image.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    /*padding-top: 15%;*/
     width: 100%;
 
 }
@@ -13,34 +11,24 @@
     margin-top:18%
 }
 
-.input-group {
+.input-search{
 
     margin: auto;
     width: 60%;
 }
-.control-group {
+.control-group-filter {
     margin-top: 10%;
 }
-.controls {
+.controls-filter {
     margin-right: 5%;
 }
-.row {
+.row-home {
     margin: auto;
     width: 60%;
 }
 
-.form-group {
 
-}
-.col-sm-3 {
-    max-width: 35%;
-}
-
-.btn {
-    border-radius: 0 !important;
-
-}
-.form-control{
+.form-control-filter{
     border-radius: 0;
 }
 
