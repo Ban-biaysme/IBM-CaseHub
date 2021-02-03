@@ -1,6 +1,6 @@
 .nav-links {
   list-style: none;
-  margin: 0;
+  margin-top: 0;
   padding: 0;
   width: 100%;
   height: 100%;
@@ -8,10 +8,11 @@
   flex-direction: column;
   justify-content: center;
   text-align: left;
+
 }
 
 .nav-links li {
-  margin: 1rem;
+  margin-top: 30PX;
 }
 
 .nav-links a {
@@ -74,8 +75,5 @@
     color: #292929;
   }
 
-  .line-sep{
-    color: #0e5efd;
-    align-items: center;
-  }
+
 }

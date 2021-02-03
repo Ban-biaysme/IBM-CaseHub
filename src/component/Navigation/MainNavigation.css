@@ -18,7 +18,7 @@
 }
 
 .main-navigation__title {
-  color: #262626;
+  color: #161616;
   text-align: center;
   font-size: 36px;
   font-weight: 600;
@@ -64,4 +64,12 @@ h1 {
     display: block;
     /*text-align: left;*/
   }
+
+  .line-sep{
+    color: #0e5efd;
+    align-items: center;
+    padding-left: 0px;
+
+  }
+
 }

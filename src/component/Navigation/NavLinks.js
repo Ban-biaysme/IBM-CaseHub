@@ -5,17 +5,16 @@ import './NavLinks.css';
 
 const NavLinks = props => {
   return <ul className="nav-links">
-    <li> <h2 className="line-sep"> | </h2>
-    </li>
     <li>
       <NavLink to="/case-study" exact>CREATE CASE STUDY</NavLink>
     </li>
     <li>
-      <NavLink to="/cases">VIEW ALL</NavLink>
+      <NavLink to="/">YOUR CASE STUDIES</NavLink>
     </li>
     <li>
-      <NavLink to="/export">EXPORT</NavLink>
+      <NavLink to="/cases">VIEW ALL</NavLink>
     </li>
+
     {/*<li>*/}
     {/*  <NavLink to="/">DELETE</NavLink>*/}
     {/*</li>*/}
