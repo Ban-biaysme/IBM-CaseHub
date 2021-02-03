@@ -2,7 +2,7 @@
     height: 120vh;
     box-sizing: border-box;
     background:
-    border-box, url(search_background.jpg) no-repeat center center;
+    border-box, url(../../src/images/search_background.jpg) no-repeat center center;
     background-size: cover;
     padding-top: 0px;
 }

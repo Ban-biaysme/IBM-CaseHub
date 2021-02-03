@@ -215,7 +215,7 @@ export class CaseStudyForm extends React.Component{
                                           onChange={event => {this.setState({problem_space:event.target.value})}}/>
                             </div>
                         </div>
-
+                    </div>
                     {/* end of Problem */}
                     <div className="col-lg-12 mb-4">
                         <div className="control-group form-group">
@@ -259,7 +259,7 @@ export class CaseStudyForm extends React.Component{
                     </div>
                     {/* end of Impact */}
 
-                </div>
+
             <div className="col-lg-12 text-center btn-section">
 
                 <button className="btn btn-primary btn-xl text-uppercase save-btn" onClick={() => this.addCaseStudy()}> SAVE AS DRAFT</button>
