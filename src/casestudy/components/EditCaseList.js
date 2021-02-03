@@ -1,9 +1,9 @@
 import React from 'react';
 
-import CaseItem from './CaseItem';
+import EditCaseItem from './EditCaseItem';
 import './CaseList.css';
 
-const CaseList = props => {
+const EditCaseList = props => {
   if (props.items.length === 0) {
     return (
       <div className="center">
@@ -19,7 +19,7 @@ const CaseList = props => {
         <ul className="cases-list">
 
           {props.items.map(cases => (
-            <CaseItem
+            <EditCaseItem
 
               key={cases.project_id}
               id={cases.project_id}
@@ -33,4 +33,4 @@ const CaseList = props => {
   );
 };
 
-export default CaseList;
+export default EditCaseList;

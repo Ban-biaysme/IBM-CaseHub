@@ -1,10 +1,9 @@
 import React from 'react';
-import CaseList from "../components/CaseList";
-
-import axios from "../../axios";
+import EditCaseList from "../components/EditCaseList";
+import axios from "../../axios"
 
 let CASES = [];
-export default class Cases extends React.Component{
+export default class DraftCases extends React.Component{
     constructor(props){
         super(props);
         this.state={ data: ''};
@@ -18,11 +17,8 @@ export default class Cases extends React.Component{
 
         axios.get(`view-all`).then((res) => {
             this.setState({data:res.data});
-                   });
+        });
     }
-
-
-
 
     render(){
         function split_at_index(value,index)
@@ -31,7 +27,7 @@ export default class Cases extends React.Component{
         }
         CASES=[];
 
-               Array.from(this.state.data).map((val)=> {
+        Array.from(this.state.data).map((val)=> {
 
 
             CASES.push(
@@ -43,7 +39,7 @@ export default class Cases extends React.Component{
                 });
             //id = val._id;
         })
-                      return  <div><h1>IBM CASE STUDIES</h1><CaseList items={CASES}/></div>;
+        return  <EditCaseList items={CASES}/>;
 
     };
 

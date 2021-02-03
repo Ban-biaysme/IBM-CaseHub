@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './Avatar.css';
+import './Icon.css';
 
-const Avatar = props => {
+const Icon = props => {
   return (
     <div className={`avatar ${props.className}`} style={props.style}>
       <img
@@ -14,4 +14,4 @@ const Avatar = props => {
   );
 };
 
-export default Avatar;
+export default Icon;
