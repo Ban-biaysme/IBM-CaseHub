@@ -39,7 +39,7 @@ h1 {
   color: white;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 35px;
 }
 
 .main-navigation__title a {
@@ -55,6 +55,18 @@ h1 {
   height: 100%;
 }
 
+.line-sep{
+  color: white;
+  align-items: center;
+  padding-left: 0px;
+  font-size: xxx-large;
+
+}
+
+.head-title{
+  color: #0e5efd;
+}
+
 @media (min-width: 768px) {
   .main-navigation__menu-btn {
     display: none;
@@ -64,12 +76,11 @@ h1 {
     display: block;
     /*text-align: left;*/
   }
+}
 
+@media (max-width: 740px) {
   .line-sep{
-    color: #0e5efd;
-    align-items: center;
-    padding-left: 0px;
+    display:none;
 
   }
-
 }

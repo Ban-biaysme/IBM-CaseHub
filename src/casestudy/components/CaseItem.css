@@ -2,6 +2,7 @@
     margin: 1rem;
     width: calc(22% - 2rem);
     min-width: 17.5rem;
+
   }
 
   .case-item a {
@@ -11,13 +12,14 @@
     height: 100%;
     text-decoration: none;
     padding: 1rem;
-    color: white;
-    background: #0e5efd;
+    /*color: white;*/
+    background: #FFFFFF ;
+
   }
 
   .case-item a:hover,
   .case-item a:active {
-    background: #c9d2d4;
+    background: #F4F4F4 ;
   }
 
   .case-item__content {
@@ -31,18 +33,18 @@
   }
 
   .case-item__info h2,h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 0 0 0.5rem 0;
     font-weight: normal;
-    color: #ffd900;
+    color: black;
   }
 
-  .case-item:hover h2,
-  .case-item:active h2,
-  .case-item:hover h3,
-  .case-item:active h3 {
-    color: #292929;
-  }
+  /*.case-item:hover h2,*/
+  /*.case-item:active h2,*/
+  /*.case-item:hover h3,*/
+  /*.case-item:active h3 {*/
+  /*  color: #292929;*/
+  /*}*/
 
   .case-item__info h3 {
     margin: 0;

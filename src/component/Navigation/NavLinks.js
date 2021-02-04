@@ -5,7 +5,7 @@ import './NavLinks.css';
 
 const NavLinks = props => {
   return <ul className="nav-links">
-    <li> <h2 className="line-sep"> | </h2>
+    <li> <h2 className="line-sep">  </h2>
     </li>
     <li>
       <NavLink to="/case-study" exact>Create</NavLink>
@@ -15,6 +15,8 @@ const NavLinks = props => {
     </li>
     <li>
       <NavLink to="/mycases">My Cases</NavLink>
+    </li>
+    <li>
       <NavLink to="/logout">Logout</NavLink>
     </li>
   </ul>

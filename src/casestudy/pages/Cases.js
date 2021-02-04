@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import CaseList from "../components/CaseList";
 
 import axios from "../../axios";
+import "./ViewAllCases.css";
 
 let CASES = [];
 export default class Cases extends React.Component{

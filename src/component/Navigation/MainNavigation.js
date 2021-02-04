@@ -33,7 +33,7 @@ const MainNavigation = props => {
           <span />
         </button>
         <h1 className="main-navigation__title">
-          <Link to="/"><h1><span className="title">IBM</span> CASE HUB <span className="line-sep"> | </span></h1>
+          <Link to="/"><h1 className="head-title"><span className="title">IBM</span> CASE HUB <span className="line-sep"> | </span></h1>
 
            </Link>
         </h1>
