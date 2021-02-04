@@ -13,12 +13,12 @@
 .main-navigation__menu-btn span {
   display: block;
   width: 3rem;
-  height: 2.5px;
+  height: 2px;
   background: #cbc3c3;
 }
 
 .main-navigation__title {
-  color: #262626;
+  color: #161616;
   text-align: center;
   font-size: 36px;
   font-weight: 600;
@@ -30,16 +30,16 @@ h1 {
   color: #8d9091;
   text-align: center;
   font-weight: bold;
-  font-size: 36px;
+  font-size: 28px;
   letter-spacing: .05em;
   font-family:  "Roboto", sans-serif;
 }
 
 .title{
-  color: rgb(201, 208, 208);
+  color: white;
   text-transform: uppercase;
-  font-weight: 800;
-  font-size: 36px;
+  font-weight: 600;
+  font-size: 35px;
 }
 
 .main-navigation__title a {
@@ -55,6 +55,18 @@ h1 {
   height: 100%;
 }
 
+.line-sep{
+  color: white;
+  align-items: center;
+  padding-left: 0px;
+  font-size: xxx-large;
+
+}
+
+.head-title{
+  color: #0e5efd;
+}
+
 @media (min-width: 768px) {
   .main-navigation__menu-btn {
     display: none;
@@ -62,5 +74,13 @@ h1 {
 
   .main-navigation__header-nav {
     display: block;
+    /*text-align: left;*/
+  }
+}
+
+@media (max-width: 740px) {
+  .line-sep{
+    display:none;
+
   }
 }

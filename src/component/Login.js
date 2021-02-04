@@ -23,7 +23,12 @@ function Login({setToken, serverURI}) {
             })
             .then((res) => {
                 console.log(serverURI)
-                res.data['login'] === 'success' ? setToken('res.data') : alert('Invalid Username or password !!');
+                // res.data['login'] === 'success' ? setToken('res.data') : alert('Invalid Username or password !!');
+                if(res.data['login'] === 'success') {
+                    setToken('res.data');
+                    localStorage.setItem('login-token','success');
+                    window.location.reload();
+                }
             });
     }
 

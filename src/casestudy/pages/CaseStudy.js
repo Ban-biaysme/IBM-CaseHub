@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import axios from "../../axios";
 
 export default class CaseStudy extends React.Component {
@@ -10,7 +10,7 @@ export default class CaseStudy extends React.Component {
 
     componentDidMount() {
         const caseId = this.props.match.params.CaseId;
-        axios.get("/view-by-id1", {params: {_id: caseId}}).then((res) => {
+        axios.get("view-by-id1", {params: {_id: caseId}}).then((res) => {
             let matchData = res.data.filter((val) => {
                 if (val._id === caseId) {
                     return val;

@@ -1,13 +1,13 @@
 .cases-list {
     list-style: none;
     margin: 0 auto;
-    padding: 0;
-    width: 95%;
-    max-width: 50rem;
+    padding: 30px;
+    width: 100%;
+    /*max-width: 50rem;*/
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 10px;
 text-decoration: none;
     justify-content: center;
-
+background-color: #F4F4F4;
   }

@@ -1,8 +1,10 @@
 .ibm-login-main-div{
-    background-image: url(pic3.jpg);
+    height: 120vh;
+    box-sizing: border-box;
+    background:
+    border-box, url(../../src/images/search_background.jpg) no-repeat center center;
     background-size: cover;
-    background-position: center center;
-    padding-bottom: 0;
+    padding-top: 0px;
 }
 
 .ibm-login-form{
@@ -12,19 +14,22 @@
     margin-right: auto;
     padding: 0;
     border-radius: 5px;
+    border: 1px solid #525252;
     box-shadow: 0px 2px 7px rgba(0,0,0,0.2);
     overflow: hidden;
     color: #ffffff;
-    background: linear-gradient(rgb(238, 245, 244), rgb(215, 244, 252));
+    background: linear-gradient(rgb(238, 245, 244), rgb(161, 194, 246));
     background-size: cover;
 }
 
+
+
 #ibm-login-heading{
-    color: rgb(32, 33, 33);
     text-transform: uppercase;
     font-weight: 700;
     font-size:20px;
     padding-bottom: 0;
+    color: #181818;
 }
 
 .ibm-login-btn{
@@ -32,7 +37,7 @@
     text-transform: uppercase;
     font-size: 1em;
     text-align: center;
-    color:rgba(255,255,255,1);
+    color: rgb(234, 227, 227);
     padding: 4px 0px;
     width: 70%;
     height:40px;
@@ -45,22 +50,23 @@
 form{
     position:relative;
     z-index: 1;
-    background: rgb(54, 90, 117);
+    background: linear-gradient(rgb(24, 45, 165), rgb(87, 149, 248));
     max-width: 450px;
-    margin:0 auto 10px ;
+    margin:0 auto 100px ;
     padding:45px;
     text-align: center;
 }
 
-.form input{
+form input{
     font-family: "Roboto", sans-serif;
     padding:20px;
-    background: #f2f2f2;
-    border: 1px solid gray;
+    background: #F4F4F4;
+    border: 1px solid #525252;
     width: 100%;
     margin: 0 0 15px;
     transition: .5s;
     font-size:14px;
+
 }
 
 
@@ -72,14 +78,14 @@ form{
     margin-bottom:.3em;
 }
 
-.form button:hover, .form button:active{
-    background: rgb(129, 216, 243);
+form button:hover, form button:active{
+    background: rgb(247, 247, 248);
     opacity: 0.7;
 }
 
 label {
-    color: rgb(38, 39, 40);
-    font-weight: 600;
+    color: #181818;
+    font-weight:700;
 }
 
 .login-form :-ms-input-placeholder {
