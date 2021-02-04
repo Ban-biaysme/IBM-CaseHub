@@ -8,7 +8,7 @@ const CaseItem = props => {
   return (
     <li className="case-item">
       <Card className="case-item__content">
-        <Link to={`/CaseStudy/${props.id}`}>
+        <Link to={`indiView/${props.id}`}>
           <div className="case-item__image">
             <Icon image={props.image} alt={props.name} />
           </div>

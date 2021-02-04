@@ -9,6 +9,7 @@ import MainNavigation from './component/Navigation/MainNavigation';
 import Cases from "./casestudy/pages/Cases";
 import CaseStudy from "./casestudy/pages/CaseStudy";
 import CaseStudyForm from "./component/CaseStudyForm";
+import IndividualCaseStudy from "./casestudy/pages/IndividualCaseStudy";
 export default App;
 
 const serverURI = 'http://127.0.0.1:3001';
@@ -40,8 +41,8 @@ function App() {
                         <Route path="/view" exact>
                             <View serverURI={serverURI}/>
                         </Route>
-
-                        <Route path="/:CaseId/CaseStudy" exact>
+                        <Route path="/indiView/:CaseId" component={IndividualCaseStudy} />
+                                    <Route path="/:CaseId/CaseStudy" exact>
                             <CaseStudy serverURI={serverURI}/>
                         </Route>
 
