@@ -2,7 +2,7 @@ import React from 'react';
 import Axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cases from "../casestudy/pages/Cases";
-import Avatar from "../casestudy/components/Avatar";
+import Icon from "../casestudy/components/Icon";
 
 export class View extends React.Component{
     constructor(props){
@@ -22,7 +22,9 @@ export class View extends React.Component{
     }
 
     render(){
+
         return(
+
             <div className="container">
                 <h1> CASE STUDY RECORDS </h1>
                 <div>
@@ -52,6 +54,7 @@ export class View extends React.Component{
                                 <tr> <td> {val.project_id}</td>
 
                                     <td> {val.project_name}</td>
+                                    <td> {val.project_type}</td>
                                     <td> {val.project_industry}</td>
 
                                     <td> {val.client_name}</td>

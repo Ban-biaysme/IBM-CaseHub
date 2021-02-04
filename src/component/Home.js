@@ -12,9 +12,6 @@ export class Home extends React.Component {
 
     onChange;
 
-    searchCaseStudy() {
-        return undefined;
-    }
 
     render() {
         return (
@@ -24,19 +21,19 @@ export class Home extends React.Component {
 
                     <br/><br/>
                 </div>
-                <div className="container">
-                    <div className="input-group">
+                <div className="container search-page">
+                    <div className="input-group input-search">
                         <input type="search" className="form-control" placeholder="Search for case studies" aria-label="Search"
                                aria-describedby="search-addon"/>
                         <button type="button" className="btn btn-primary">search</button>
                     </div>
 
-                    <div className="row justify-content-evenly">
-                        <div className="col-sm-3">
+                    <div className="row justify-content-evenly row-home">
+                        <div>
 
-                            <div className="control-group form-group">
-                                <div className="controls">
-                                    <select id="Project_industry" name="industry" className="form-control" required
+                            <div className="control-group form-group control-group-filter">
+                                <div className="controls controls-filter">
+                                    <select id="Project_industry" name="industry" className="form-control form-control-filter" required
                                             onChange={event => {
                                                 this.setState({project_industry: event.target.value})
                                             }}>
@@ -49,15 +46,15 @@ export class Home extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-sm-3">
+                        <div>
 
-                            <div className="control-group form-group">
-                                <div className="controls">
-                                    <select id="Project_industry" name="industry" className="form-control" required
+                            <div className="control-group form-group control-group-filter">
+                                <div className="controls controls-filter">
+                                    <select id="Project_industry" name="industry" className="form-control form-control-filter" required
                                             onChange={event => {
                                                 this.setState({project_industry: event.target.value})
                                             }}>
-                                        <option disabled selected value="0">All Companies</option>
+                                        <option disabled selected value="0">All Companies</option>con
                                         <option value="banking"> ANZ</option>
                                         <option value="healthcare"> Wellington Hospital</option>
                                         <option value="telecom"> Vodafone</option>
@@ -67,18 +64,6 @@ export class Home extends React.Component {
                             </div>
                         </div>
                     </div>
-
-                    <div>
-                        <br></br>
-                        <div className="col-lg-12 text-center">
-                            <h6>Or</h6>
-                            <button className="btn btn-primary" type="submit">View all</button>
-                        </div>
-
-
-                    </div>
-
-
 
 
 

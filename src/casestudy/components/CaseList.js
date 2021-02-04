@@ -15,7 +15,7 @@ const CaseList = props => {
   return (
     <div>
 
-        <h1> IBM CASE STUDIES</h1>
+
         <ul className="cases-list">
 
           {props.items.map(cases => (
