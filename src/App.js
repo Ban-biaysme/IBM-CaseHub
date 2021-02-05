@@ -33,9 +33,10 @@ function App() {
                         </Route>
 
                        {/*Route to the Create case study component*/}
-                                           <Route path="/case-study" exact>
+                       <Route path="/case-study" exact>
                             <CaseStudyForm serverURI={serverURI}/>
                         </Route>
+
                         {/*Route to the View component*/}
                         <Route path="/view" exact>
                             <View serverURI={serverURI}/>

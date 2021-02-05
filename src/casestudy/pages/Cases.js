@@ -4,6 +4,10 @@ import CaseList from "../components/CaseList";
 import axios from "../../axios";
 import "./ViewAllCases.css";
 
+// import ReactToPdf from 'react-to-pdf';
+//
+// const ref = React.createRef();
+
 let CASES = [];
 export default class Cases extends React.Component{
     constructor(props){
@@ -26,6 +30,7 @@ export default class Cases extends React.Component{
 
 
     render(){
+
         function split_at_index(value,index)
         {
             return value.substring(0, index);
@@ -44,7 +49,16 @@ export default class Cases extends React.Component{
                 });
             //id = val._id;
         })
-                      return  <div><h1>IBM CASE STUDIES</h1><CaseList items={CASES}/></div>;
+                      // return( <div ref={ref}>
+                          return( <div>
+                          <h1>IBM CASE STUDIES</h1><CaseList items={CASES}/>
+                          {/*<ReactToPdf targetRef={ref} filename="case-study.pdf">*/}
+                          {/*    {({toPdf}) => (*/}
+                          {/*        <button className="btn btn-primary btn-xl text-uppercase export-btn" onClick={toPdf}*/}
+                          {/*               >Export PDF</button>*/}
+                          {/*    )}*/}
+                          {/*</ReactToPdf>*/}
+               </div>);
 
     };
 
