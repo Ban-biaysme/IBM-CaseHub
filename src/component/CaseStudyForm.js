@@ -12,8 +12,13 @@ export default class CaseStudyForm extends React.Component {
         this.state = {
             project_name: '', project_industry: '', country: '', city: '', client_name: '', client_code_name: '',
             client_phone: '', client_email: '', project_start_date: '',
-            project_end_date: '', problem_space: '', approach: '', idea: '', impact: ''
+            project_end_date: '', problem_space: '', approach: '', idea: '', impact: '',create: false
         };
+    }
+    addCaseStudy1() {
+        if(!this.state.project_name || !this.state.project_industry || !this.state.client_name){alert("Please enter all the requires fields");
+        }else{
+        this.addCaseStudy();}
     }
 
     addCaseStudy() {
@@ -313,7 +318,7 @@ export default class CaseStudyForm extends React.Component {
                     <div className="col-lg-12 text-center btn-section">
 
                         <button className="btn btn-primary btn-xl text-uppercase save-btn"
-                                onClick={() => this.addCaseStudy()}> SAVE AS DRAFT
+                                onClick={() => this.addCaseStudy1()}> SAVE AS DRAFT
                         </button>
 
                         <button className="btn btn-primary btn-xl text-uppercase export-btn" data-toggle="modal"

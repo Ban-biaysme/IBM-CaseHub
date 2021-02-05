@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "IBMPlexSans-BoldItalic";
+  src: local("IBMPlexSans-BoldItalic-"),url(./fonts/IBMPlexSans-BoldItalic.ttf) format('truetype');
+}
+
 body {
   /*padding: 60px;*/
   margin-top: 60px;

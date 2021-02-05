@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './fonts/IBMPlexSans-Bold.ttf'
+import './fonts/IBMPlexSans-BoldItalic.ttf'
 
 ReactDOM.render(
     <React.StrictMode>

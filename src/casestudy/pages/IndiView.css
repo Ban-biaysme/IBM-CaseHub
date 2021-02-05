@@ -1,14 +1,19 @@
-h5{
+.text-color-h5 {
+    font-weight: 600;
+    color: white;
+}
+@font-face {
+    font-family: "IBMPlexSans-BoldItalic";
+    src: local("IBMPlexSans-BoldItalic-"),url(../../fonts/IBMPlexSans-BoldItalic.ttf) format('truetype');
+}
+
+.text-color-h1{
+font-family: IBMPlexSans-BoldItalic;
     font-weight: 600;
     color: white;
 }
 
-h1{
-    font-weight: 600;
-    color: white;
-}
-
-h2{
+.text-color-h2 {
     color:black;
 }
 
@@ -23,31 +28,7 @@ h2{
 .ibm-div2{
 background-color: #F4F4F4;
 }
-    /*margin-top: 0;*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-    /*padding: 10px;*/
-    /*overflow: hidden;*/
-    /*!*background-size: cover;*!*/
-    /*!*background-image: url(background.jpg);*!*/
-    /*background-color: #525252;*/
-    /*background-size: cover;*/
-    /*background-position: center center;*/
-
-
-/*.ibm-background-image{*/
-/*    background-image: url(background.jpg);*/
-/*    background-size: cover;*/
-/*    background-position: center center;*/
-/*    padding-bottom: 0;*/
-
-/*}*/
-
 
 .ibm-div-padding{
     padding: 50px;
 }
-/*.data{*/
-/*    font-weight:normal;*/
-/*    font-size: 18px;*/
-/*}*/

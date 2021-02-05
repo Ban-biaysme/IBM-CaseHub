@@ -8,7 +8,7 @@ const NavLinks = props => {
     <li> <h2 className="line-sep">  </h2>
     </li>
     <li>
-      <NavLink to="/case-study" exact>Create</NavLink>
+      <NavLink to="/create" exact>Create</NavLink>
     </li>
     <li>
       <NavLink to="/cases">View All</NavLink>

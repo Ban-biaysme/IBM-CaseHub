@@ -10,6 +10,7 @@ import Cases from "./casestudy/pages/Cases";
 import CaseStudy from "./casestudy/pages/CaseStudy";
 import CaseStudyForm from "./component/CaseStudyForm";
 import IndividualCaseStudy from "./casestudy/pages/IndividualCaseStudy";
+import {EditCaseStudy} from "./casestudy/pages/EditCaseStudy";
 export default App;
 
 const serverURI = 'http://127.0.0.1:3001';
@@ -34,19 +35,11 @@ function App() {
                         </Route>
 
                        {/*Route to the Create case study component*/}
-                                           <Route path="/case-study" exact>
+                                           <Route path="/create" exact>
                             <CaseStudyForm serverURI={serverURI}/>
                         </Route>
-                        {/*Route to the View component*/}
-                        <Route path="/view" exact>
-                            <View serverURI={serverURI}/>
-                        </Route>
-                        <Route path="/indiView/:CaseId" component={IndividualCaseStudy} />
-                                    <Route path="/:CaseId/CaseStudy" exact>
-                            <CaseStudy serverURI={serverURI}/>
-                        </Route>
-
-                        <Route path="/CaseStudy/:CaseId" component={CaseStudy}/>
+                         <Route path="/indiView/:CaseId" component={IndividualCaseStudy} />
+                        <Route path="/EditCaseStudy/:CaseId" component={EditCaseStudy}/>
                         {/*<Route path="/:CaseId/CaseStudy" exact>*/}
                         {/*    <CaseStudy serverURI={serverURI}/>*/}
                         {/*</Route>*/}
