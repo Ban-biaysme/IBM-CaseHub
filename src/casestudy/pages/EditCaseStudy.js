@@ -1,8 +1,8 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "../../axios";
-import ReactToPdf from 'react-to-pdf';
 import "../../component/CaseStydyFormStyle.css";
+import {saveAs} from "file-saver"
 
 
 
@@ -11,25 +11,30 @@ export class EditCaseStudy extends React.Component{
 
     constructor(props){
         super(props);
-        this.state={project_name:'', project_industry:'', country:'', city:'', client_name:'',client_code_name:'',
+        this.state={_id:'', project_name:'', project_industry:'', country:'', city:'', client_name:'',client_code_name:'',
             client_address:'', client_phone:'', client_email:'', project_start_date:'',
             project_end_date:'', problem_space:'', approach:'', idea:'', impact:'',data:""};
         this.componentDidMount = this.componentDidMount.bind(this);
     }
     componentDidMount() {
         const caseId = this.props.match.params.CaseId;
-        axios.get("/view-by-id1", {params: {_id: caseId}}).then((res) => {
-            let matchData = res.data.filter((val) => {
-                if (val._id === caseId) {
-                    return val;
-                }
-            });
-            this.setState({data:matchData});
-        });
+        axios.post("/view-by-id1", {params: {_id: caseId}}).then((res) => {
+                               this.setState(res.data[0]);
+                           });
     }
+    exporttoPdf = () =>{
+        axios.post(`create-pdf`, this.state )
+            .then(()=> axios.get(`fetch-pdf`,{responseType: 'blob'}))
+            .then((res)=>{
+                const pdfBlob =new Blob([res.data],{type:'application/pdf'});
+                saveAs(pdfBlob,this.state.project_name+'.pdf');
+            })
+
+           }
 
     addCaseStudy(){
-        axios.post(`create`, {
+        axios.post(`update`, {
+            _id: this.state._id,
             project_name: this.state.project_name,
             project_industry: this.state.project_industry,
             country: this.state.country,
@@ -65,7 +70,7 @@ export class EditCaseStudy extends React.Component{
                             <div className="control-group form-group">
                                 <div className="controls form-floating">
                                     <label htmlFor="project_name">Case Study Name</label>
-                                    <input defaultValue={this.state.data ? this.state.data[0].project_name : ''} onChange={event => {
+                                    <input defaultValue={this.state.project_name} onChange={event => {
                                         this.setState({project_name: event.target.value})
                                     }} type="text" className="project_name" id="project_name"/>
                                 </div>
@@ -82,7 +87,7 @@ export class EditCaseStudy extends React.Component{
                             <div className="control-group form-group">
                                 <div className="controls">
                                     <label>Industry:</label>
-                                    <select defaultValue={this.state.data ? this.state.data[0].project_industry : ''} id="Project_industry" name="industry" className="form-control" required
+                                    <select defaultValue={this.state.project_industry } id="Project_industry" name="industry" className="form-control" required
                                             onChange={event => {
                                                 this.setState({project_industry: event.target.value})
                                             }}>
@@ -103,7 +108,7 @@ export class EditCaseStudy extends React.Component{
                             <div className="control-group form-group">
                                 <div className="controls">
                                     <label>Country:</label>
-                                    <select defaultValue={this.state.data ? this.state.data[0].country : ''} id="country" name="type" className="form-control" required
+                                    <select defaultValue={this.state.country } id="country" name="type" className="form-control" required
                                             onChange={event => {
                                                 this.setState({country: event.target.value})
                                             }}>
@@ -120,7 +125,7 @@ export class EditCaseStudy extends React.Component{
                             <div className="control-group form-group">
                                 <div className="controls">
                                     <label htmlFor="city">City</label>
-                                    <input defaultValue={this.state.data ? this.state.data[0].city : ''} onChange={event => {
+                                    <input defaultValue={this.state.city } onChange={event => {
                                         this.setState({city: event.target.value})
                                     }} type="text" className="form-control" id="city"/>
                                 </div>
@@ -136,7 +141,7 @@ export class EditCaseStudy extends React.Component{
                             <div className="form-group">
                                 <label>Project Start Date:</label>
                                 <div className="datepicker date input-group p-0 shadow-sm">
-                                    <input defaultValue={this.state.data ? this.state.data[0].project_start_date : ''} type="date" id="startdate" name="checkin"
+                                    <input defaultValue={this.state.project_start_date } type="date" id="startdate" name="checkin"
                                            placeholder="Checking in date YYYY-mm-dd*"
                                            min='1899-01-01' className="form-control py-3 px-3" required="required"
                                            data-validation-required-message="Please enter project start date."
@@ -154,7 +159,7 @@ export class EditCaseStudy extends React.Component{
                             <div className="form-group">
                                 <label>Project End Date:</label>
                                 <div className="datepicker date input-group p-0 shadow-sm">
-                                    <input defaultValue={this.state.data ? this.state.data[0].project_end_date : ''} type="date" id="enddate" name="checkin"
+                                    <input defaultValue={this.state.project_end_date } type="date" id="enddate" name="checkin"
                                            placeholder="Checking in date YYYY-mm-dd*"
                                            min='1899-01-01' className="form-control py-3 px-3" required="required"
                                            data-validation-required-message="Please enter project end date."
@@ -196,7 +201,7 @@ export class EditCaseStudy extends React.Component{
 
                                                     <div className="controls">
                                                         <label htmlFor="client_name">Client Name</label>
-                                                        <input defaultValue={this.state.data ? this.state.data[0].client_name : ''} onChange={event => {
+                                                        <input defaultValue={this.state.client_name} onChange={event => {
                                                             this.setState({client_name: event.target.value})
                                                         }} type="text" className="form-control" id="client_name"/>
                                                     </div>
@@ -204,21 +209,21 @@ export class EditCaseStudy extends React.Component{
                                                     <div className="controls">
                                                         <label htmlFor="client_code_name">Client's Sensitive
                                                             Name</label>
-                                                        <input defaultValue={this.state.data ? this.state.data[0].client_code_name : ''} onChange={event => {
+                                                        <input defaultValue={this.state.client_code_name } onChange={event => {
                                                             this.setState({client_code_name: event.target.value})
                                                         }} type="text" className="form-control" id="client_code_name"/>
                                                     </div>
 
                                                     <div className="controls">
                                                         <label htmlFor="phone">Contact Number</label>
-                                                        <input defaultValue={this.state.data ? this.state.data[0].client_phone : ''} onChange={event => {
+                                                        <input defaultValue={this.state.client_phone } onChange={event => {
                                                             this.setState({client_phone: event.target.value})
                                                         }} type="text" className="form-control" id="phone"/>
                                                     </div>
 
                                                     <div className="controls">
                                                         <label htmlFor="email">Email ID</label>
-                                                        <input defaultValue={this.state.data ? this.state.data[0].client_email : ''} onChange={event => {
+                                                        <input defaultValue={this.state.client_email} onChange={event => {
                                                             this.setState({client_email: event.target.value})
                                                         }} type="text" className="form-control" id="email"/>
                                                     </div>
@@ -257,7 +262,7 @@ export class EditCaseStudy extends React.Component{
                                 <h5> Project Problem:<span> <i className="fas fa-question-circle"
                                                                title="what is the problem and,or the client is facing? "/></span>
                                 </h5>
-                                <textarea defaultValue={this.state.data ? this.state.data[0].problem_space : ''} id="problem_space" name="comments" rows="3" cols="10" className="form-control"
+                                <textarea defaultValue={this.state.problem_space } id="problem_space" name="comments" rows="3" cols="10" className="form-control"
                                           placeholder="Please enter project problem"
                                           maxLength="999"
                                           onChange={event => {
@@ -273,7 +278,7 @@ export class EditCaseStudy extends React.Component{
                                 <h5>Project Approach :<span> <i className="fas fa-question-circle"
                                                                 title="what have IBM team done to address and solve the problem space?"/></span>
                                 </h5>
-                                <textarea defaultValue={this.state.data ? this.state.data[0].approach : ''} id="approach" name="comments" rows="3" cols="10" className="form-control"
+                                <textarea defaultValue={this.state.approach } id="approach" name="comments" rows="3" cols="10" className="form-control"
                                           placeholder="Please enter project approach"
                                           maxLength="999"
                                           onChange={event => {
@@ -289,7 +294,7 @@ export class EditCaseStudy extends React.Component{
                                 <h5> Project Idea :<span> <i className="fas fa-question-circle"
                                                              title=" what was the solution both client and IBM team align on to solve the problem?"/></span>
                                 </h5>
-                                <textarea defaultValue={this.state.data ? this.state.data[0].idea : ''} id="idea" name="comments" rows="3" cols="10" className="form-control"
+                                <textarea defaultValue={this.state.idea } id="idea" name="comments" rows="3" cols="10" className="form-control"
                                           placeholder="Please enter project idea"
                                           maxLength="999"
                                           onChange={event => {
@@ -307,7 +312,7 @@ export class EditCaseStudy extends React.Component{
                                     <span> <i className="fas fa-question-circle"
                                               title="what was the value delivered to the client and/or employees fro the idea?"/></span>
                                 </h5>
-                                <textarea defaultValue={this.state.data ? this.state.data[0].impact : ''} id="impact" name="comments" rows="3" cols="10" className="form-control"
+                                <textarea defaultValue={this.state.impact } id="impact" name="comments" rows="3" cols="10" className="form-control"
                                           placeholder="Please enter project impact"
                                           maxLength="999"
                                           onChange={event => {
@@ -322,28 +327,23 @@ export class EditCaseStudy extends React.Component{
                     <div className="col-lg-12 text-center btn-section">
 
                         <button className="btn btn-primary btn-xl text-uppercase save-btn"
-                                onClick={() => this.addCaseStudy()}> SAVE
+                                onClick={() => this.addCaseStudy()}> UPDATE
                         </button>
 
-                        <button className="btn btn-primary btn-xl text-uppercase export-btn" data-toggle="modal"
+                        <button onClick={this.exporttoPdf} className="btn btn-primary btn-xl text-uppercase export-btn" data-toggle="modal"
                                 data-target="#ibm-export"> EXPORT
                         </button>
 
                         <button className="btn btn-primary btn-xl text-uppercase publish-btn"> PUBLISH</button>
 
 
-                        <ReactToPdf targetRef={ref} filename="div-blue.pdf">
-                            {({toPdf}) => (
-                                <button onClick={toPdf}>Generate pdf</button>
-                            )}
-                        </ReactToPdf>
 
                         {/*// <!-- Modal -->*/}
                         <div className="modal fade" id="ibm-export" role="dialog">
                             <div className="modal-dialog">
 
                                 {/*// <!-- Modal content-->*/}
-                                <div className="modal-content">
+                                {/*<div className="modal-content">
                                     <div className="modal-header">
                                         <h4 className="modal-title"> Export</h4>
                                         <button type="button" className="close" data-dismiss="modal">&times;</button>
@@ -354,11 +354,11 @@ export class EditCaseStudy extends React.Component{
 
                                     </div>
                                     <div className="modal-footer">
-                                        {/*<ReactToPdf targetRef={ref} filename="div-blue.pdf">*/}
-                                        {/*    <button className="btn btn-primary export-btn-md">*/}
-                                        {/*        One Page PDF*/}
-                                        {/*    </button>*/}
-                                        {/*</ReactToPdf>*/}
+                                        <ReactToPdf targetRef={ref} filename="div-blue.pdf">
+                                            <button className="btn btn-primary export-btn-md">
+                                                One Page PDF
+                                            </button>
+                                        </ReactToPdf>
                                         <button className="btn btn-primary export-btn-md">
                                             One Page .pptx
                                         </button>
@@ -366,7 +366,7 @@ export class EditCaseStudy extends React.Component{
                                             One Page .key
                                         </button>
                                     </div>
-                                </div>
+                                </div>*/}
 
                             </div>
                         </div>

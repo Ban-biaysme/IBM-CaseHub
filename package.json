@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^12.6.2",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "file": "^0.2.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
@@ -22,6 +23,7 @@
     "react-spring": "^8.0.27",
     "react-to-pdf": "0.0.13",
     "react-transition-group": "^4.4.1",
+    "saver": "^0.1.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -49,6 +51,7 @@
     ]
   },
   "devDependencies": {
+    "file-saver": "^2.0.5",
     "prop-types": "^15.7.2"
   }
 }

@@ -2,11 +2,14 @@ import React from 'react';
 import Axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CaseStydyFormStyle.css";
-import ReactToPdf from 'react-to-pdf';
+import {saveAs} from "file-saver"
+
 
 const ref = React.createRef();
 
 export default class CaseStudyForm extends React.Component {
+
+
     constructor(props) {
         super(props);
         this.state = {
@@ -15,6 +18,14 @@ export default class CaseStudyForm extends React.Component {
             project_end_date: '', problem_space: '', approach: '', idea: '', impact: ''
         };
     }
+    exporttoPdf = () =>{
+        Axios.post(`${this.props.serverURI}/create-pdf`, this.state )
+            .then(()=> Axios.get(`${this.props.serverURI}/fetch-pdf`,{responseType: 'blob'}))
+            .then((res)=>{
+                const pdfBlob =new Blob([res.data],{type:'application/pdf'});
+                saveAs(pdfBlob,this.state.project_name+'.pdf');
+            })
+        }
     checkForm(){
         if(this.checkFormFields()){
             this.addCaseStudy();
@@ -142,11 +153,11 @@ export default class CaseStudyForm extends React.Component {
 
     render() {
         //pdf format
-        const options = {
+     /*   const options = {
             orientation: 'landscape',
             unit: 'in',
             format: [4,2]
-        };
+        };*/
 
         return (
             <div className="cs-main-div" ref={ref}>
@@ -160,7 +171,7 @@ export default class CaseStudyForm extends React.Component {
                                     <label htmlFor="project_name">Case Study Name</label>
                                     <input id="project_name" placeholder=" Please enter the project name" onChange={event => {
                                         this.setState({project_name: event.target.value})
-                                    }} type="text" className="project_name" id="project_name" required/>
+                                    }} type="text" className="project_name" required/>
                                     <span id="project_name_msg"/>
                                 </div>
 
@@ -223,7 +234,7 @@ export default class CaseStudyForm extends React.Component {
                                     <label htmlFor="city">City</label>
                                     <input id="city" placeholder=" Please enter city" onChange={event => {
                                         this.setState({city: event.target.value})
-                                    }} type="text" className="form-control" id="city"/>
+                                    }} type="text" className="form-control" />
                                 </div>
                                 <span id="city_msg"/>
                             </div>
@@ -426,7 +437,7 @@ export default class CaseStudyForm extends React.Component {
                                           onChange={event => {
                                               this.setState({impact: event.target.value})
                                           }}/>
-                                <p className="tooltip-text"> What was the value delivered to the client and/or employees fro the idea? </p>
+                                <p className="tooltip-text"> What was the value delivered to the client and/or employees for the idea? </p>
                             </div>
                         </div>
                     </div>
@@ -444,11 +455,12 @@ export default class CaseStudyForm extends React.Component {
                         {/*</button>*/}
 
 
-                        <ReactToPdf targetRef={ref} filename="case-study.pdf" options={options} x={.5} y={.5} scale={0.8}>
+                     {/*   <ReactToPdf targetRef={ref} filename="case-study.pdf" options={options} x={.5} y={.5} scale={0.8}>
                             {({toPdf}) => (
                                 <button className="btn btn-primary btn-xl text-uppercase export-btn" onClick={toPdf}>Export</button>
                             )}
-                        </ReactToPdf>
+                        </ReactToPdf>*/}
+                        <button className="btn btn-primary btn-xl text-uppercase export-btn" onClick={this.exporttoPdf}>Export</button>
 
                         <button className="btn btn-primary btn-xl text-uppercase publish-btn"
                                 data-toggle="modal"
