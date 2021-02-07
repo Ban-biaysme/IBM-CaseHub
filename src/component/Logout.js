@@ -1,4 +1,4 @@
-import {Redirect, useHistory} from "react-router";
+import { useHistory} from "react-router";
 import {useState} from "react";
 
 
@@ -10,8 +10,7 @@ import {useState} from "react";
               pathname:  "/"
 
           });
-        /*return(
-history);*/
+
            };
 
 
@@ -21,13 +20,4 @@ history);*/
 
 
 export default Logout;
-/*
 
-function Logout() {
-    console.log("logout function")
-    localStorage.clear();
-    this.props.history.push("/login");
-    window.location.reload();
-};
-
-*/
