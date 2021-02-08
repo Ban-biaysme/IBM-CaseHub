@@ -9,6 +9,10 @@
 
   }
 
+.case-item-color{
+  color: #161616;
+}
+
   .case-item a {
     display: flex;
     align-items: center;
@@ -16,8 +20,8 @@
     height: 100%;
     text-decoration: none;
     padding: 1rem;
-    /*color: white;*/
-    background: #FFFFFF ;
+    /*color: black;*/
+    /*background: #FFFFFF ;*/
 
   }
 
@@ -47,7 +51,7 @@
   /*.case-item:active h2,*/
   /*.case-item:hover h3,*/
   /*.case-item:active h3 {*/
-  /*  color: #292929;*/
+  /*  color: black;*/
   /*}*/
 
   .case-item__info h3 {
