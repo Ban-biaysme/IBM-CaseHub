@@ -68,23 +68,23 @@ export default class IndividualCaseStudy extends React.Component {
    </div>
 
                 {/*end of raw*/}
-       <div className="ibm-div2">
-                <div className="col-lg-12 ibm-div-padding">
+       <div className="ibm-div2 ">
+                <div className="col-lg-12 ibm-div-padding2">
                     <h2 className="text-color">Problem Space :</h2>
                     <p>{this.state.data ? this.state.data[0].problem_space : ''}</p>
                 </div>
 
-                <div className="col-lg-12 ibm-div-padding">
+                <div className="col-lg-12 ibm-div-padding2">
                     <h2 className="text-color">Impact :</h2>
                     <p>{this.state.data ? this.state.data[0].impact : ''}</p>
                 </div>
 
-                <div className="col-lg-12 ibm-div-padding">
+                <div className="col-lg-12 ibm-div-padding2">
                     <h2 className="text-color">Idea :</h2>
                     <p>{this.state.data ? this.state.data[0].idea : ''}</p>
                 </div>
 
-                <div className="col-lg-12 ibm-div-padding">
+                <div className="col-lg-12 ibm-div-padding2">
                     <h2 className="text-color">Approach :</h2>
                     <p>{this.state.data ? this.state.data[0].approach : ''}</p>
                 </div>

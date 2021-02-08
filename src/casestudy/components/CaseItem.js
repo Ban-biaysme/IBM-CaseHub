@@ -12,7 +12,7 @@ const CaseItem = props => {
           <div className="case-item__image">
             <Icon image={props.image} alt={props.name} />
           </div>
-          <div className="case-item__info">
+          <div className="case-item__info case-item-color">
             <h5>{props.project_name}</h5>
             <h3>
               {props.client_name}

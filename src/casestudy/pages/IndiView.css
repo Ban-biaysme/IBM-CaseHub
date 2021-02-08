@@ -45,8 +45,13 @@ background-color: #F4F4F4;
 
 
 .ibm-div-padding{
-    padding: 50px;
+    padding: 10px;
 }
+
+.ibm-div-padding2{
+    padding: 30px;
+}
+
 /*.data{*/
 /*    font-weight:normal;*/
 /*    font-size: 18px;*/
