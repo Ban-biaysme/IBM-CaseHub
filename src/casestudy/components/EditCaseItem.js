@@ -14,7 +14,7 @@ const CaseItem = props => {
             <Icon image={props.image} alt={props.name} />
           </div>
           <div className="case-item__info">
-            <h5>{props.project_name}</h5>
+            <h2>{props.project_name}</h2>
             <h3>
               {props.client_name}
             </h3>

@@ -24,11 +24,19 @@ export default class CaseStudyForm extends React.Component {
             .then((res)=>{
                 const pdfBlob =new Blob([res.data],{type:'application/pdf'});
                 saveAs(pdfBlob,this.state.project_name+'.pdf');
+
+                //Success message added
+                let warning_msg = document.getElementById('warning_msg');
+                warning_msg.innerHTML = "PDF file generated successfully!!";
+                warning_msg.className = 'pdf-msg';
             })
         }
     checkForm(){
         if(this.checkFormFields()){
             this.addCaseStudy();
+            let save_changed = document.getElementById('save_changed');
+            save_changed.disabled = true;
+            save_changed.style.backgroundColor="gray";
         }else{
             // alert("Please enter the values for the required filed!!");
 
@@ -477,7 +485,14 @@ export default class CaseStudyForm extends React.Component {
 
                                     </div>
                                     <div className="modal-footer">
-
+                                        {/*<ReactToPdf targetRef={ref} filename="div-blue.pdf">*/}
+                                        {/*    <button className="btn btn-primary export-btn-md">*/}
+                                        {/*        One Page PDF*/}
+                                        {/*    </button>*/}
+                                        {/*</ReactToPdf>*/}
+                                        {/*<button className="btn btn-primary export-btn-md">*/}
+                                        {/*    One Page .pptx*/}
+                                        {/*</button>*/}
                                         <button data-dismiss="modal" className="btn btn-primary export-btn-md">
                                             Publish
                                         </button>

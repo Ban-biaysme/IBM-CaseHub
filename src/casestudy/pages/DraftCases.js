@@ -7,14 +7,12 @@ export default class DraftCases extends React.Component{
     constructor(props){
         super(props);
         this.state={ data: ''};
-
         this.componentDidMount=this.componentDidMount.bind(this);
     }
 
     //call this on page load
     componentDidMount() {
         //communicate with backend
-
         axios.get(`view-all`).then((res) => {
             this.setState({data:res.data});
         });
@@ -28,8 +26,6 @@ export default class DraftCases extends React.Component{
         CASES=[];
 
         Array.from(this.state.data).map((val)=> {
-
-
             CASES.push(
                 {
                     project_id: val._id,
@@ -40,9 +36,6 @@ export default class DraftCases extends React.Component{
             //id = val._id;
         })
         return  <EditCaseList items={CASES}/>;
-
     };
-
-
 }
 

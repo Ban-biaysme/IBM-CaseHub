@@ -2,6 +2,7 @@ import React from 'react';
 import CaseList from "../components/CaseList";
 import Axios from "axios";
 
+
 let CASES = [];
 export default class PublishedCases extends React.Component{
     constructor(props){

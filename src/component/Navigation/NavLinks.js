@@ -14,7 +14,7 @@ const NavLinks = props => {
       <NavLink to="/cases">View All</NavLink>
     </li>
     <li>
-      <NavLink to="/mycases">My Cases</NavLink>
+      <NavLink to="/mycases">Your Case Studies</NavLink>
     </li>
     <li>
       <NavLink to="/logout">Logout</NavLink>

@@ -177,8 +177,9 @@ p{
 }
 
 .error{
-    color: #920404;
-    font-style: italic;
+    color: #fa2a2a;
+   font-style: italic;
+    font-weight: 500;
 }
 
 #warning_msg{
@@ -193,7 +194,12 @@ p{
 }
 
 .success{
-    background-color: #d2f5e6;
+    background-color: #8f8f92;
     color: #043892;
+    font-weight: bold;
+}
+.pdf-msg{
+    background-color: #8f8f92;
+    color: #202121;
     font-weight: bold;
 }

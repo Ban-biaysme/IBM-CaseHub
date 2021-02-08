@@ -1,18 +1,30 @@
 
 .toggleBtns {
-    display: flex;
+    display:flex;
     flex-wrap: nowrap;
-    background-color: DodgerBlue;
+    background-color: #7a7b7c;
 }
+
 .btnsDiv{
     width: 50%;
 }
 
 .usercasesBtn {
-    background-color: #f1f1f1;
+    background-color: #050ebe;
+    height: 3rem;
+    display: flex;
     width: 100%;
     margin: 0px;
     text-align: center;
-    line-height: 75px;
-    font-size: 30px;
+    line-height: 25px;
+    font-size: 18px;
+    justify-content: center;
+}
+
+@media (max-width: 740px) {
+    .usercasesBtn{
+        font-size: 12px;
+        line-height: 20px;
+    }
+
 }
