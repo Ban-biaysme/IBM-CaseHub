@@ -32,7 +32,7 @@ export class EditCaseStudy extends React.Component{
 
            }
 
-    addCaseStudy(){
+    updateCaseStudy(){
         axios.post(`update`, {
             _id: this.state._id,
             project_name: this.state.project_name,
@@ -49,10 +49,36 @@ export class EditCaseStudy extends React.Component{
             problem_space: this.state.problem_space,
             approach: this.state.approach,
             idea: this.state.idea,
-            impact: this.state.impact
+            impact: this.state.impact,
+            status: "Draft"
 
         }).then(()=> {
-            alert('Case study added successfully!!!!')
+            alert('Case study Updated successfully!!!!')
+        });
+
+    }
+    publishCaseStudy(){
+        axios.post(`update`, {
+            _id: this.state._id,
+            project_name: this.state.project_name,
+            project_industry: this.state.project_industry,
+            country: this.state.country,
+            city: this.state.city,
+            client_name: this.state.client_name,
+            client_code_name: this.state.client_code_name,
+            client_address: this.state.address,
+            client_phone: this.state.phone,
+            client_email: this.state.email,
+            project_start_date: this.state.project_start_date,
+            project_end_date: this.state.project_end_date,
+            problem_space: this.state.problem_space,
+            approach: this.state.approach,
+            idea: this.state.idea,
+            impact: this.state.impact,
+            status: "Published"
+
+        }).then(()=> {
+            alert('Case study published successfully!!!!')
         });
 
     }
@@ -327,50 +353,43 @@ export class EditCaseStudy extends React.Component{
                     <div className="col-lg-12 text-center btn-section">
 
                         <button className="btn btn-primary btn-xl text-uppercase save-btn"
-                                onClick={() => this.addCaseStudy()}> UPDATE
+                                onClick={() => this.updateCaseStudy()}> UPDATE
                         </button>
 
                         <button onClick={this.exporttoPdf} className="btn btn-primary btn-xl text-uppercase export-btn" data-toggle="modal"
                                 data-target="#ibm-export"> EXPORT
                         </button>
 
-                        <button className="btn btn-primary btn-xl text-uppercase publish-btn"> PUBLISH</button>
 
-
+                        <button className="btn btn-primary btn-xl text-uppercase publish-btn"
+                                data-toggle="modal"
+                                data-target="#ibm-publish"> PUBLISH</button>
 
                         {/*// <!-- Modal -->*/}
-                        <div className="modal fade" id="ibm-export" role="dialog">
+                        <div className="modal fade" id="ibm-publish" role="dialog">
                             <div className="modal-dialog">
 
                                 {/*// <!-- Modal content-->*/}
-                                {/*<div className="modal-content">
+                                <div className="modal-content">
                                     <div className="modal-header">
-                                        <h4 className="modal-title"> Export</h4>
+                                        <h4 className="modal-title"> PUBLISH </h4>
                                         <button type="button" className="close" data-dismiss="modal">&times;</button>
 
                                     </div>
                                     <div className="modal-body">
-                                        <h5>Choose output format</h5>
+                                        <h5>Do you want to publish the case study?</h5>
 
                                     </div>
                                     <div className="modal-footer">
-                                        <ReactToPdf targetRef={ref} filename="div-blue.pdf">
-                                            <button className="btn btn-primary export-btn-md">
-                                                One Page PDF
-                                            </button>
-                                        </ReactToPdf>
-                                        <button className="btn btn-primary export-btn-md">
-                                            One Page .pptx
-                                        </button>
-                                        <button className="btn btn-primary export-btn-md">
-                                            One Page .key
+
+                                        <button onClick={() => this.publishCaseStudy()} data-dismiss="modal" className="btn btn-primary export-btn-md">
+                                            Publish
                                         </button>
                                     </div>
-                                </div>*/}
+                                </div>
 
                             </div>
                         </div>
-
                     </div>
                 </div>
                 {/*End of client detail modal window */}

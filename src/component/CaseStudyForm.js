@@ -141,7 +141,8 @@ export default class CaseStudyForm extends React.Component {
             problem_space: this.state.problem_space,
             approach: this.state.approach,
             idea: this.state.idea,
-            impact: this.state.impact
+            impact: this.state.impact,
+            status: "Draft"
 
         }).then(() => {
             // alert('Case study saved successfully!!!!');
@@ -152,12 +153,6 @@ export default class CaseStudyForm extends React.Component {
     }
 
     render() {
-        //pdf format
-     /*   const options = {
-            orientation: 'landscape',
-            unit: 'in',
-            format: [4,2]
-        };*/
 
         return (
             <div className="cs-main-div" ref={ref}>
@@ -482,14 +477,7 @@ export default class CaseStudyForm extends React.Component {
 
                                     </div>
                                     <div className="modal-footer">
-                                        {/*<ReactToPdf targetRef={ref} filename="div-blue.pdf">*/}
-                                        {/*    <button className="btn btn-primary export-btn-md">*/}
-                                        {/*        One Page PDF*/}
-                                        {/*    </button>*/}
-                                        {/*</ReactToPdf>*/}
-                                        {/*<button className="btn btn-primary export-btn-md">*/}
-                                        {/*    One Page .pptx*/}
-                                        {/*</button>*/}
+
                                         <button data-dismiss="modal" className="btn btn-primary export-btn-md">
                                             Publish
                                         </button>

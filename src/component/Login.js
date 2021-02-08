@@ -27,6 +27,7 @@ function Login({setToken, serverURI}) {
                 if(res.data['login'] === 'success') {
                     setToken('res.data');
                     localStorage.setItem('login-token','success');
+                    localStorage.setItem('login-user',username);
                     window.location.reload();
                 }
             });
