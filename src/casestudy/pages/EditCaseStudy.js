@@ -28,6 +28,11 @@ export class EditCaseStudy extends React.Component{
             .then((res)=>{
                 const pdfBlob =new Blob([res.data],{type:'application/pdf'});
                 saveAs(pdfBlob,this.state.project_name+'.pdf');
+
+                //Success message added for export button
+                let warning_msg = document.getElementById('warning_msg');
+                warning_msg.innerHTML = "PDF file generated successfully!!";
+                warning_msg.className = 'pdf-msg';
             })
 
            }
@@ -52,15 +57,17 @@ export class EditCaseStudy extends React.Component{
             impact: this.state.impact
 
         }).then(()=> {
-            alert('Case study added successfully!!!!')
+            // alert('Case study added successfully!!!!');
+            //success message added to the save button
+            let warning_msg = document.getElementById('warning_msg');
+            warning_msg.innerHTML = "Case study updated successfully!!";
+            warning_msg.className = 'success';
         });
 
     }
 
     render() {
-
         return (
-
             <div className="cs-main-div" ref={ref}>
 
                 <div className="ibm-main-div1">
@@ -322,7 +329,9 @@ export class EditCaseStudy extends React.Component{
                         </div>
                     </div>
                     {/* end of Impact */}
+                    {/* End of project-details-div */}
 
+                    <div className="alert-message error fade in hide span16" data-alert="alert" id="warning_msg"/>
 
                     <div className="col-lg-12 text-center btn-section">
 
@@ -330,54 +339,42 @@ export class EditCaseStudy extends React.Component{
                                 onClick={() => this.addCaseStudy()}> UPDATE
                         </button>
 
-                        <button onClick={this.exporttoPdf} className="btn btn-primary btn-xl text-uppercase export-btn" data-toggle="modal"
+                        {/*button toggle properties remove. otherwise screen became dim after clicking the export button*/}
+
+                        <button onClick={this.exporttoPdf} className="btn btn-primary btn-xl text-uppercase export-btn"
                                 data-target="#ibm-export"> EXPORT
                         </button>
 
-                        <button className="btn btn-primary btn-xl text-uppercase publish-btn"> PUBLISH</button>
-
-
+                        <button className="btn btn-primary btn-xl text-uppercase publish-btn"
+                                data-toggle="modal"
+                                data-target="#ibm-publish"> PUBLISH</button>
 
                         {/*// <!-- Modal -->*/}
-                        <div className="modal fade" id="ibm-export" role="dialog">
+                        <div className="modal fade" id="ibm-publish" role="dialog">
                             <div className="modal-dialog">
 
                                 {/*// <!-- Modal content-->*/}
-                                {/*<div className="modal-content">
+                                <div className="modal-content">
                                     <div className="modal-header">
-                                        <h4 className="modal-title"> Export</h4>
+                                        <h4 className="modal-title"> PUBLISH </h4>
                                         <button type="button" className="close" data-dismiss="modal">&times;</button>
 
                                     </div>
                                     <div className="modal-body">
-                                        <h5>Choose output format</h5>
+                                        <h5>Do you want to publish the case study?</h5>
 
                                     </div>
                                     <div className="modal-footer">
-                                        <ReactToPdf targetRef={ref} filename="div-blue.pdf">
-                                            <button className="btn btn-primary export-btn-md">
-                                                One Page PDF
-                                            </button>
-                                        </ReactToPdf>
-                                        <button className="btn btn-primary export-btn-md">
-                                            One Page .pptx
-                                        </button>
-                                        <button className="btn btn-primary export-btn-md">
-                                            One Page .key
+                                        <button data-dismiss="modal" className="btn btn-primary export-btn-md">
+                                            Publish
                                         </button>
                                     </div>
-                                </div>*/}
-
+                                </div>
                             </div>
-                        </div>
-
                     </div>
                 </div>
+                </div>
                 {/*End of client detail modal window */}
-                {/* End of project-details-div */}
-
-                {/*Button section of Create form*/}
-
 
                 <div className="row blue-div2">
                     <h6> @copyright IBM 2021 </h6>

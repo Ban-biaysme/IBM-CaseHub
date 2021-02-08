@@ -2,12 +2,16 @@
     list-style: none;
     margin: 0 auto;
     padding: 30px;
-    width: 100%;
+    width: 98%;
     /*max-width: 50rem;*/
-    display: grid;
+    /*display: grid;*/
+
+    /* display pattern changes to make the tiles responsive for all screen size*/
+    display: flex;
     grid-template-columns: auto auto auto auto;
     grid-gap: 10px;
-text-decoration: none;
+    text-decoration: none;
     justify-content: center;
-background-color: #F4F4F4;
+    background-color: #F4F4F4;
+    flex-wrap: wrap;
   }

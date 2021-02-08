@@ -8,7 +8,7 @@
 }
 
 .text-color-h1{
-font-family: IBMPlexSans-BoldItalic;
+    font-family: IBMPlexSans-BoldItalic, sans-serif;
     font-weight: 600;
     color: white;
 }
