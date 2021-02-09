@@ -1,6 +1,6 @@
 import React from 'react';
 import CaseList from "../components/CaseList";
-import Axios from "axios";
+import axios from "../../axios"
 
 
 let CASES = [];
@@ -16,7 +16,7 @@ export default class PublishedCases extends React.Component{
     componentDidMount() {
         //communicate with backend
 
-        Axios.get(`${this.props.serverURI}/view-all`).then((res) => {
+        axios.get(`view-your-cs-published`,{params: {username: this.state.username}}).then((res) => {
             this.setState({data:res.data});
         });
     }
@@ -35,8 +35,7 @@ export default class PublishedCases extends React.Component{
                 });
             //id = val._id;
         })
-        let listobj = <CaseList items={CASES}/>;
-        return listobj;
+        return <CaseList items={CASES}/>;
 
     };
 

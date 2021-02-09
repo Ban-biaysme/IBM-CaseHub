@@ -15,8 +15,10 @@ export default class CaseStudyForm extends React.Component {
         this.state = {
             project_name: '', project_industry: '', country: '', city: '', client_name: '', client_code_name: '',
             client_phone: '', client_email: '', project_start_date: '',
-            project_end_date: '', problem_space: '', approach: '', idea: '', impact: ''
+            project_end_date: '', problem_space: '', approach: '', idea: '', impact: '',username:''
         };
+        let uName = localStorage.getItem('login-user');
+        this.setState({username:uName})
     }
     exporttoPdf = () =>{
         Axios.post(`${this.props.serverURI}/create-pdf`, this.state )
@@ -150,7 +152,10 @@ export default class CaseStudyForm extends React.Component {
             approach: this.state.approach,
             idea: this.state.idea,
             impact: this.state.impact,
-            status: "Draft"
+            status: "Draft",
+            userName: this.state.username
+
+
 
         }).then(() => {
             // alert('Case study saved successfully!!!!');

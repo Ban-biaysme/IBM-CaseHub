@@ -6,14 +6,16 @@ let CASES = [];
 export default class DraftCases extends React.Component{
     constructor(props){
         super(props);
-        this.state={ data: ''};
+        this.state={ data: '',username: ''};
+        let uName = localStorage.getItem('login-user');
+        this.setState({username:uName})
         this.componentDidMount=this.componentDidMount.bind(this);
     }
 
     //call this on page load
     componentDidMount() {
         //communicate with backend
-        axios.get(`view-all`).then((res) => {
+        axios.get(`view-your-cs-draft`,{params: {username: this.state.username}}).then((res) => {
             this.setState({data:res.data});
         });
     }
