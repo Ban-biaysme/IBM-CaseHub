@@ -23,10 +23,10 @@ export default class UserCases extends React.Component {
             <div>
                 <div className="toggleBtns">
                     <div className="btnsDiv">
-                        <Button onClick={() => {this.setState({isDraftCases:true})}} className={"usercasesBtn"} id="draftBtn" style={this.draftBtnProps}>DRAFT CASE STUDIES</Button>
+                        <Button onClick={() => {this.setState({isDraftCases:true})}} className="usercasesBtn" id="draftBtn" style={this.draftBtnProps}>DRAFT CASE STUDIES</Button>
                     </div>
                     <div className="btnsDiv">
-                        <Button onClick={() => {this.setState({isDraftCases:false})}} className={"usercasesBtn"} id="publishedBtn" style={this.publisedBtnProps}>PUBLISHED CASE STUDIES</Button>
+                        <Button onClick={() => {this.setState({isDraftCases:false})}} className="usercasesBtn" id="publishedBtn" style={this.publisedBtnProps}>PUBLISHED CASE STUDIES</Button>
                     </div>
                 </div>
                 {this.state.isDraftCases ? <DraftCases/>:<PublishedCases/>}
@@ -36,12 +36,5 @@ export default class UserCases extends React.Component {
     };
 
 
-    publishedList() {
-        return undefined;
-    }
-
-    draftList() {
-        return undefined;
-    }
 }
 
