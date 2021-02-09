@@ -9,6 +9,22 @@
 
   }
 
+@font-face {
+  font-family: "IBMPlexSans-SemiBold";
+  src: local("IBMPlexSans-SemiBold-"),url(../../fonts/IBMPlexSans-SemiBold.ttf) format('truetype');
+}
+
+#case-item-color{
+  color: #393939;
+  font-size: 24px;
+  font-family: IBMPlexSans-SemiBold, sans-serif;
+}
+
+#case-item-color-name{
+  color: #393939;
+  font-size: 24px;
+}
+
   .case-item a {
     display: flex;
     align-items: center;
@@ -16,9 +32,6 @@
     height: 100%;
     text-decoration: none;
     padding: 1rem;
-    /*color: white;*/
-    background: #FFFFFF ;
-
   }
 
   .case-item a:hover,
@@ -40,14 +53,14 @@
     font-size: 1.2rem;
     margin: 0 0 0.5rem 0;
     font-weight: normal;
-    color: black;
+    /*color: black;*/
   }
 
   /*.case-item:hover h2,*/
   /*.case-item:active h2,*/
   /*.case-item:hover h3,*/
   /*.case-item:active h3 {*/
-  /*  color: #292929;*/
+  /*  color: black;*/
   /*}*/
 
   .case-item__info h3 {

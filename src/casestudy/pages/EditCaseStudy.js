@@ -28,16 +28,11 @@ export class EditCaseStudy extends React.Component{
             .then((res)=>{
                 const pdfBlob =new Blob([res.data],{type:'application/pdf'});
                 saveAs(pdfBlob,this.state.project_name+'.pdf');
-
-                //Success message added for export button
-                let warning_msg = document.getElementById('warning_msg');
-                warning_msg.innerHTML = "PDF file generated successfully!!";
-                warning_msg.className = 'pdf-msg';
             })
 
            }
 
-    addCaseStudy(){
+    updateCaseStudy(){
         axios.post(`update`, {
             _id: this.state._id,
             project_name: this.state.project_name,
@@ -54,20 +49,44 @@ export class EditCaseStudy extends React.Component{
             problem_space: this.state.problem_space,
             approach: this.state.approach,
             idea: this.state.idea,
-            impact: this.state.impact
+            impact: this.state.impact,
+            status: "Draft"
 
         }).then(()=> {
-            // alert('Case study added successfully!!!!');
-            //success message added to the save button
-            let warning_msg = document.getElementById('warning_msg');
-            warning_msg.innerHTML = "Case study updated successfully!!";
-            warning_msg.className = 'success';
+            alert('Case study Updated successfully!!!!')
+        });
+
+    }
+    publishCaseStudy(){
+        axios.post(`update`, {
+            _id: this.state._id,
+            project_name: this.state.project_name,
+            project_industry: this.state.project_industry,
+            country: this.state.country,
+            city: this.state.city,
+            client_name: this.state.client_name,
+            client_code_name: this.state.client_code_name,
+            client_address: this.state.address,
+            client_phone: this.state.phone,
+            client_email: this.state.email,
+            project_start_date: this.state.project_start_date,
+            project_end_date: this.state.project_end_date,
+            problem_space: this.state.problem_space,
+            approach: this.state.approach,
+            idea: this.state.idea,
+            impact: this.state.impact,
+            status: "Published"
+
+        }).then(()=> {
+            alert('Case study published successfully!!!!')
         });
 
     }
 
     render() {
+
         return (
+
             <div className="cs-main-div" ref={ref}>
 
                 <div className="ibm-main-div1">
@@ -329,21 +348,18 @@ export class EditCaseStudy extends React.Component{
                         </div>
                     </div>
                     {/* end of Impact */}
-                    {/* End of project-details-div */}
 
-                    <div className="alert-message error fade in hide span16" data-alert="alert" id="warning_msg"/>
 
                     <div className="col-lg-12 text-center btn-section">
 
                         <button className="btn btn-primary btn-xl text-uppercase save-btn"
-                                onClick={() => this.addCaseStudy()}> UPDATE
+                                onClick={() => this.updateCaseStudy()}> UPDATE
                         </button>
 
-                        {/*button toggle properties remove. otherwise screen became dim after clicking the export button*/}
-
-                        <button onClick={this.exporttoPdf} className="btn btn-primary btn-xl text-uppercase export-btn"
+                        <button onClick={this.exporttoPdf} className="btn btn-primary btn-xl text-uppercase export-btn" data-toggle="modal"
                                 data-target="#ibm-export"> EXPORT
                         </button>
+
 
                         <button className="btn btn-primary btn-xl text-uppercase publish-btn"
                                 data-toggle="modal"
@@ -365,16 +381,22 @@ export class EditCaseStudy extends React.Component{
 
                                     </div>
                                     <div className="modal-footer">
-                                        <button data-dismiss="modal" className="btn btn-primary export-btn-md">
+
+                                        <button onClick={() => this.publishCaseStudy()} data-dismiss="modal" className="btn btn-primary export-btn-md">
                                             Publish
                                         </button>
                                     </div>
                                 </div>
+
                             </div>
+                        </div>
                     </div>
                 </div>
-                </div>
                 {/*End of client detail modal window */}
+                {/* End of project-details-div */}
+
+                {/*Button section of Create form*/}
+
 
                 <div className="row blue-div2">
                     <h6> @copyright IBM 2021 </h6>
