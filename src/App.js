@@ -14,7 +14,7 @@ import {EditCaseStudy} from "./casestudy/pages/EditCaseStudy";
 import Logout from "./component/Logout";
 export default App;
 
-const serverURI = 'http://127.0.0.1:3001';
+const serverURI = 'http://54.206.202.79:3001';
 //const serverURI = 'http://3.104.104.28:3001';
 
 function App() {
