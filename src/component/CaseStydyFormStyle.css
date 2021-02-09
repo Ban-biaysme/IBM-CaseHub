@@ -111,6 +111,7 @@
     box-sizing: border-box;
     background-size: cover;
     padding: 30px 30px 30px 10%;
+    color: white;
 }
 
 .white-arrow{
@@ -118,9 +119,9 @@
     padding-left: 30px;
 }
 
-h2{
-    color: white;
-}
+/*h2{*/
+/*    color: white;*/
+/*}*/
 h5{
     color:black;
     font-weight: 600;
