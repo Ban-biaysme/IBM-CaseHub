@@ -41,13 +41,10 @@ function App() {
                          <Route path="/indiView/:CaseId" component={IndividualCaseStudy} />
                         <Route path="/EditCaseStudy/:CaseId" component={EditCaseStudy}/>
                         <Route path="/logout" component={Logout}/>
+                        <Route path="/Cases" component={Cases}/>
+                        <Route path="/login" component={Login}/>
 
-                        <Route path="/Cases" exact>
-                            <Cases  />
-                        </Route>
-                        <Route path="/login" exact>
-                            <Login  />
-                        </Route>
+
                         {/*Route to the UserCases component*/}
                         <Route path="/mycases" exact>
                             <UserCases />

@@ -8,6 +8,11 @@ import "./Home.css";
 
 
 export class Home extends React.Component {
+    constructor(props){
+        super(props);
+        this.state={ project_industry:'', client_name:'',data:""};
+       //this.componentDidMount = this.componentDidMount.bind(this);
+    }
 
 
     onChange;
