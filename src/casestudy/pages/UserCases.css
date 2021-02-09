@@ -21,8 +21,21 @@
     justify-content: center;
 }
 
-.usercasesBtn:active{
-    background-color: #050ebe;
+
+#draftBtn:active{
+    background-color: #0e5efd;
+}
+
+#draftBtn:hover{
+    background-color: #0e5efd;
+}
+
+#publishedBtn:hover{
+    background-color: #0e5efd;
+
+}
+#publishedBtn:active{
+    background-color: #0e5efd;
 }
 
 @media (max-width: 740px) {
