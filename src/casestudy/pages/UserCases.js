@@ -5,7 +5,8 @@ import Axios from "axios";
 import {Button} from "react-bootstrap";
 import "./UserCases.css";
 import DraftCases from "./DraftCases";
-// import "../components/CaseItem.css"
+import PublishedCases from "./PublishedCases";
+
 
 
 export default class UserCases extends React.Component {
@@ -14,25 +15,21 @@ export default class UserCases extends React.Component {
 
     constructor(props){
         super(props);
-        this.state={ data: ''};
+        this.state={ data: '', isDraftCases:true};
     }
     render(){
-
+        let isDraftCases = false;
         return (
             <div>
                 <div className="toggleBtns">
                     <div className="btnsDiv">
-                        <Button className="usercasesBtn" id="draftBtn" style={this.draftBtnProps}>DRAFT CASE STUDIES</Button>
+                        <Button onClick={() => {this.setState({isDraftCases:true})}} className="usercasesBtn" id="draftBtn" style={this.draftBtnProps}>DRAFT CASE STUDIES</Button>
                     </div>
                     <div className="btnsDiv">
-                        <Button className="usercasesBtn" id="publishedBtn" style={this.publisedBtnProps}>PUBLISHED CASE STUDIES</Button>
+                        <Button onClick={() => {this.setState({isDraftCases:false})}} className="usercasesBtn" id="publishedBtn" style={this.publisedBtnProps}>PUBLISHED CASE STUDIES</Button>
                     </div>
                 </div>
-
-                <div>
-                    {/*Class name removed btnsDiv class only shows 50% of the screen*/}
-                    <DraftCases/>
-                </div>
+                {this.state.isDraftCases ? <DraftCases/>:<PublishedCases/>}
             </div>
         );
 
