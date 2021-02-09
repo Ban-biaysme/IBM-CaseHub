@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
-import Axios from "axios";
+import axios from "../axios"
 // import '../App.css';
 import './Login.css';
 export default Login;
@@ -15,13 +15,8 @@ function Login({setToken, serverURI}) {
 
     const login = e => {
         e.preventDefault();
-
-        Axios
-            .post(`${serverURI}/login`, {
-                username: {username},
-                password: {password}
-            })
-            .then((res) => {
+        axios.post(`login`, { username:{username}, password:{password}} )
+                   .then((res) => {
                 console.log(serverURI)
                 // res.data['login'] === 'success' ? setToken('res.data') : alert('Invalid Username or password !!');
                 if(res.data['login'] === 'success') {

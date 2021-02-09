@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from "axios";
+import axios from "../axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CaseStydyFormStyle.css";
 import {saveAs} from "file-saver"
@@ -21,7 +22,7 @@ export default class CaseStudyForm extends React.Component {
         this.setState({username:uName})
     }
     exporttoPdf = () =>{
-        Axios.post(`${this.props.serverURI}/create-pdf`, this.state )
+        axios.post(`create-pdf`, this.state )
             .then(()=> Axios.get(`${this.props.serverURI}/fetch-pdf`,{responseType: 'blob'}))
             .then((res)=>{
                 const pdfBlob =new Blob([res.data],{type:'application/pdf'});

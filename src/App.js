@@ -14,14 +14,13 @@ import {EditCaseStudy} from "./casestudy/pages/EditCaseStudy";
 import Logout from "./component/Logout";
 export default App;
 
-const serverURI = 'http://54.206.202.79:3001';
-//const serverURI = 'http://3.104.104.28:3001';
+
 
 function App() {
     const [token, setToken] = React.useState('');
     let token1 = localStorage.getItem('login-token');
     if(!token1) {
-        return <Login setToken={setToken} serverURI={serverURI}/>
+        return <Login setToken={setToken}/>
     }
 
     return (
@@ -37,17 +36,14 @@ function App() {
 
                        {/*Route to the Create case study component*/}
                                            <Route path="/create" exact>
-                            <CaseStudyForm serverURI={serverURI}/>
+                            <CaseStudyForm />
                         </Route>
                          <Route path="/indiView/:CaseId" component={IndividualCaseStudy} />
                         <Route path="/EditCaseStudy/:CaseId" component={EditCaseStudy}/>
                         <Route path="/logout" component={Logout}/>
-                        {/*<Route path="/:CaseId/CaseStudy" exact>*/}
-                        {/*    <CaseStudy serverURI={serverURI}/>*/}
-                        {/*</Route>*/}
-                        {/*Route to the Login component*/}
+
                         <Route path="/Cases" exact>
-                            <Cases serverURI={serverURI} />
+                            <Cases  />
                         </Route>
                         <Route path="/login" exact>
                             <Login  />
