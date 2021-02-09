@@ -10,7 +10,7 @@
 }
 
 .usercasesBtn {
-    background-color: #050ebe;
+    background-color: gray;
     height: 3rem;
     display: flex;
     width: 100%;
@@ -19,6 +19,10 @@
     line-height: 25px;
     font-size: 18px;
     justify-content: center;
+}
+
+.usercasesBtn:active{
+    background-color: #050ebe;
 }
 
 @media (max-width: 740px) {

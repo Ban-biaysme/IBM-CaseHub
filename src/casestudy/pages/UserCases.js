@@ -22,10 +22,10 @@ export default class UserCases extends React.Component {
             <div>
                 <div className="toggleBtns">
                     <div className="btnsDiv">
-                        <Button className={"usercasesBtn"} id="draftBtn" style={this.draftBtnProps}>DRAFT CASE STUDIES</Button>
+                        <Button className="usercasesBtn" id="draftBtn" style={this.draftBtnProps}>DRAFT CASE STUDIES</Button>
                     </div>
                     <div className="btnsDiv">
-                        <Button className={"usercasesBtn"} id="publishedBtn" style={this.publisedBtnProps}>PUBLISHED CASE STUDIES</Button>
+                        <Button className="usercasesBtn" id="publishedBtn" style={this.publisedBtnProps}>PUBLISHED CASE STUDIES</Button>
                     </div>
                 </div>
 
