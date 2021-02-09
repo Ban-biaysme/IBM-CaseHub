@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import axios from "../../axios";
+import {saveAs} from "file-saver";
 import './IndiView.css';
+import Axios from "axios";
 
 export default class IndividualCaseStudy extends React.Component {
     constructor(props) {
@@ -16,75 +18,119 @@ export default class IndividualCaseStudy extends React.Component {
         });
     }
 
+    exporttoPdf = () =>{
+        Axios.post(`${this.props.serverURI}/create-pdf`, this.state )
+            .then(()=> Axios.get(`${this.props.serverURI}/fetch-pdf`,{responseType: 'blob'}))
+            .then((res)=>{
+                const pdfBlob =new Blob([res.data],{type:'application/pdf'});
+                saveAs(pdfBlob,this.state.project_name+'.pdf');
+
+                //Success message added
+                let warning_msg = document.getElementById('warning_msg');
+                warning_msg.innerHTML = "PDF file generated successfully!!";
+                warning_msg.className = 'pdf-msg';
+            })
+    }
+
     render() {
         console.log(this.state.data );
         return (
-                <div className="ibm-main-div1">
-                   <div className=" ibm-div-padding">
-                    <h1 className="text-color-h1"> Project Name : <span className="data">{this.state.project_name }</span>
-                    </h1>
-                </div>
+                 <div>
 
-<div className="ibm-div-padding">
-                <div className="row">
-                    <div className="col-lg-4 mb-4 ">
-                        <h5 className="text-color-h5"> Industry : <span className="data"> {this.state.project_industry }</span>
+                {/*//    <div className=" ibm-div-padding">*/}
+                {/*//     <h1 className="text-color-h1"> Project Name : <span className="data">{this.state.project_name }</span>*/}
+                {/*//     </h1>*/}
+                {/*// </div>*/}
+
+               <div className="ibm-main-div1">
+
+                    <div className="col-lg-3 mb-4 ">
+                        <h3 className="h3-back" data-dismiss="modal">&#60; Back</h3>
+                       {/*<button className="btn btn-primary btn-xl text-uppercase export-btn-indiView" onClick={this.exporttoPdf}>Back</button>*/}
+                       {/*<button type="button" className="close" data-dismiss="modal">&times;</button>*/}
+
+                   </div>
+
+               <div className="row ibm-div-padding2">
+                    <div className="col-lg-8 mb-4 ">
+                        <h5 className="text-color-h1"> <span className="data">{this.state.project_name }</span>
                         </h5>
+                        <h5 className="text-color-h5"> <span className="data"> {this.state.project_industry }</span>
+                        </h5>
+                    </div>
+               </div>
+
+                {/*<div className="row">*/}
+                {/*    <div className="col-lg-8 mb-4 ">*/}
+                {/*        <h2 className="text-color-h5"> Industry : <span className="data"> {this.state.project_industry }</span>*/}
+                {/*        </h2>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
+
+                <div className="row">
+                    <div className="col-lg-8 mb-4 ">
+                        <h2 className="text-color-h5"> Client Name: <span className="data">{this.state.client_name }</span>
+                        </h2>
                     </div>
                 </div>
 
                 <div className="row">
-                    <div className="col-lg-4 mb-4 ">
-                        <h5 className="text-color-h5"> Client Name: <span className="data">{this.state.client_name }</span>
-                        </h5>
-                    </div>
-                </div>
-
-                <div className="row">
-                    <div className="col-lg-4 mb-4 ">
-                        <h5 className="text-color-h5"> Client Location : <span className="data">{this.state.country }</span>
-                        </h5>
+                    <div className="col-lg-8 mb-4 ">
+                        <h2 className="text-color-h5"> Project Origin : <span className="data">{this.state.country }</span>
+                        </h2>
                     </div>
                 </div>
 
                 <div className="row ">
-                    <div className="col-lg-4 mb-4 ">
-                        <h5 className="text-color-h5"> Project start date : <span className="data">{this.state.project_start_date}</span>
-                        </h5>
+                    <div className="col-lg-8 mb-4 ">
+                        <h2 className="text-color-h5"> Project Date : <span className="data">{this.state.project_start_date}  {this.state.project_end_date }</span>
+                        </h2>
                     </div>
                 </div>
 
-                <div className="row">
-                    <div className="col-lg-4 mb-4  ">
-                        <h5 className="text-color-h5"> Project end date : <span className="data">{this.state.project_end_date }</span>
-                        </h5>
-                    </div>
-                </div>
+                {/*<div className="row">*/}
+                {/*    <div className="col-lg-8 mb-4  ">*/}
+                {/*        <h2 className="text-color-h5"> Project end date : <span className="data">{this.state.project_end_date }</span>*/}
+                {/*        </h2>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
    </div>
 
+
                 {/*end of raw*/}
-       <div className="ibm-div2">
+        <div className="row blue-middle-div">
+            <h2> Case Study Fields<span><i className="fas fa-arrow-down white-arrow"/></span></h2>
+        </div>
+
+       <div className="ibm-div2 ">
                 <div className="col-lg-12 ibm-div-padding">
-                    <h2 className="text-color-h2">Problem Space :</h2>
-                    <p>{this.state.problem_space}</p>
+                    <h2 className="text-color-h2">Problem Space </h2>
+                    <p id="para-padding">{this.state.problem_space}</p>
                 </div>
 
                 <div className="col-lg-12 ibm-div-padding">
-                    <h2 className="text-color-h2">Impact :</h2>
-                    <p>{this.state.impact }</p>
+                    <h2 className="text-color-h2">Impact</h2>
+                    <p id="para-padding">{this.state.impact }</p>
                 </div>
 
                 <div className="col-lg-12 ibm-div-padding">
-                    <h2 className="text-color-h2">Idea :</h2>
-                    <p>{this.state.idea }</p>
+                    <h2 className="text-color-h2">Idea</h2>
+                    <p id="para-padding" >{this.state.idea }</p>
                 </div>
 
                 <div className="col-lg-12 ibm-div-padding">
                     <h2 className="text-color-h2">Approach :</h2>
-                    <p>{this.state.approach }</p>
+                    <p  id="para-padding">{this.state.approach }</p>
                 </div>
 
             </div>
+
+                     <div className="btn-section-indiView">
+                         <button className="btn btn-primary btn-xl text-uppercase export-btn-indiView" onClick={this.exporttoPdf}>Export</button>
+                         {/*<button type="button" className="close" data-dismiss="modal">&times;</button>*/}
+
+                     </div>
+
 
                 </div>
                 // end of main div

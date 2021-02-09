@@ -36,15 +36,15 @@ h1 {
 }
 
 .title{
-  color: white;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 35px;
+  color: #ffffff;
+  /*text-transform: uppercase;*/
+  font-weight: normal;
+  font-size: 36px;
 }
 
 .main-navigation__title a {
   text-decoration: none;
-  color: #b8e3e9;
+  /*color: #b8e3e9;*/
 }
 
 .main-navigation__header-nav {
@@ -56,15 +56,22 @@ h1 {
 }
 
 .line-sep{
-  color: white;
+  color: #C6C6C6;
   align-items: center;
   padding-left: 0px;
   font-size: xxx-large;
 
 }
 
+@font-face {
+  font-family: "IBMPlexSans-SemiBold";
+  src: local("IBMPlexSans-SemiBold-"),url(../../fonts/IBMPlexSans-SemiBold.ttf) format('truetype');
+}
+
 .head-title{
-  color: #0e5efd;
+  font-family: IBMPlexSans-SemiBold;
+  color: #ffffff;
+  font-size: 36px;
 }
 
 @media (min-width: 768px) {

@@ -3,7 +3,17 @@
 }
 
 .ibm-padding{
-    padding-top: 50px;
+    padding-top: 100px;
     color: Black;
 }
 
+@font-face {
+    font-family: "IBMPlexSans-SemiBold";
+    src: local("IBMPlexSans-SemiBold-"),url(../../fonts/IBMPlexSans-SemiBold.ttf) format('truetype');
+}
+
+#ibm-case-study-title{
+    padding: 20px;
+    font-family: IBMPlexSans-SemiBold, sans-serif;
+    font-size: 48px;
+}

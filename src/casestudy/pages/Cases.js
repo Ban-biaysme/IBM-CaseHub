@@ -44,7 +44,7 @@ export default class Cases extends React.Component{
                 });
             //id = val._id;
         })
-                      return  <div><h1>IBM CASE STUDIES</h1><CaseList items={CASES}/></div>;
+        return  <div ><h1 id="ibm-case-study-title">IBM Case Studies</h1><CaseList items={CASES}/></div>;
 
     };
 
