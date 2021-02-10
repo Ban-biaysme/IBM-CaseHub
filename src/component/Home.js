@@ -4,18 +4,18 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 import "./Home.css";
+import axios from "../axios";
 
 
 
 export class Home extends React.Component {
     constructor(props){
         super(props);
-        this.state={ project_industry:'', client_name:'',data:""};
-       //this.componentDidMount = this.componentDidMount.bind(this);
+        this.state={ project_industry:'', client_name:'',tag_data:""};
+      // this.componentDidMount = this.componentDidMount.bind(this);
     }
 
 
-    onChange;
 
 
     render() {
@@ -28,9 +28,11 @@ export class Home extends React.Component {
                 </div>
                 <div className="container search-page">
                     <div className="input-group input-search">
-                        <input type="search" className="form-control" placeholder="Search for case studies" aria-label="Search"
+                        <input onChange={event => {
+                            this.setState({tag_data: event.target.value})
+                        }}type="search" className="form-control" placeholder="Search for case studies" aria-label="Search"
                                aria-describedby="search-addon"/>
-                        <button type="button" className="btn btn-primary">search</button>
+                        <button onClick={() => this.searchfunction()} type="button" className="btn btn-primary">search</button>
                     </div>
 
                     <div className="row justify-content-evenly row-home">
@@ -82,6 +84,13 @@ export class Home extends React.Component {
 
 
         )
+    }
+
+
+    searchfunction = () =>{
+        axios.post(`searchtags`, this.state ).then((res)=>{
+            console.log(res);
+        });
     }
 }
 

@@ -6,7 +6,7 @@ let CASES = [];
 export default class DraftCases extends React.Component{
     constructor(props){
         super(props);
-        this.state={ data: '',username: ''};
+        this.state={ data: '',username: localStorage.getItem('login-user')};
         let uName = localStorage.getItem('login-user');
         this.setState({username:uName})
         this.componentDidMount=this.componentDidMount.bind(this);
@@ -14,6 +14,7 @@ export default class DraftCases extends React.Component{
 
     //call this on page load
     componentDidMount() {
+        console.log(this.state.username);
         //communicate with backend
         axios.get(`view-your-cs-draft`,{params: {username: this.state.username}}).then((res) => {
             this.setState({data:res.data});
