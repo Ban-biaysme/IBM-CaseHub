@@ -13,14 +13,14 @@ export default class IndividualCaseStudy extends React.Component {
 
     componentDidMount() {
         const caseId = this.props.match.params.CaseId;
-        axios.post("/view-by-id1", {params: {_id: caseId}}).then((res) => {
+        axios.post("view-by-id1", {params: {_id: caseId}}).then((res) => {
             this.setState(res.data[0]);
         });
     }
 
     exporttoPdf = () =>{
-        Axios.post(`${this.props.serverURI}/create-pdf`, this.state )
-            .then(()=> Axios.get(`${this.props.serverURI}/fetch-pdf`,{responseType: 'blob'}))
+        axios.post(`create-pdf`, this.state )
+            .then(()=> axios.get(`fetch-pdf`,{responseType: 'blob'}))
             .then((res)=>{
                 const pdfBlob =new Blob([res.data],{type:'application/pdf'});
                 saveAs(pdfBlob,this.state.project_name+'.pdf');
@@ -124,6 +124,8 @@ export default class IndividualCaseStudy extends React.Component {
                 </div>
 
             </div>
+                     <div className="alert-message error fade in hide span16" data-alert="alert" id="warning_msg"/>
+
 
                      <div className="btn-section-indiView">
                          <button className="btn btn-primary btn-xl text-uppercase export-btn-indiView" onClick={this.exporttoPdf}>Export</button>

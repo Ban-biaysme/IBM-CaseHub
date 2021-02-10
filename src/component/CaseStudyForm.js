@@ -48,6 +48,24 @@ this.setState({client_name1: this.state.client_code_name? this.state.client_code
              warning_msg.className = 'error';
         }
     }
+    checkFormPublish(){
+        if(this.checkFormFields()){
+            this.publishCaseStudy();
+            let save_changed = document.getElementById('save_changed');
+            let publish_changed = document.getElementById('publish_btn');
+            save_changed.disabled = true;
+            save_changed.style.backgroundColor="gray";
+            publish_changed.disabled = true;
+            publish_changed.style.backgroundColor="gray";
+
+        }else{
+            // alert("Please enter the values for the required filed!!");
+
+            let warning_msg = document.getElementById('warning_msg');
+            warning_msg.innerHTML = "Please add the required fields";
+            warning_msg.className = 'error';
+        }
+    }
 
     checkFormFields(){
 
@@ -164,6 +182,34 @@ this.setState({client_name1: this.state.client_code_name? this.state.client_code
             warning_msg.innerHTML = "Congratulation Case study saved successfully!!";
             warning_msg.className = 'success';
         });
+    }
+    publishCaseStudy(){
+        axios.post(`create`, {
+            project_name: this.state.project_name,
+            project_industry: this.state.project_industry,
+            country: this.state.country,
+            city: this.state.city,
+            client_name: this.state.client_name,
+            client_code_name: this.state.client_code_name,
+            client_Contact_name:this.state.client_Contact_name,
+            client_phone: this.state.phone,
+            client_email: this.state.email,
+            project_start_date: this.state.project_start_date,
+            project_end_date: this.state.project_end_date,
+            problem_space: this.state.problem_space,
+            approach: this.state.approach,
+            idea: this.state.idea,
+            impact: this.state.impact,
+            status: "Published",
+            username: localStorage.getItem('login-user')
+
+        }).then(()=> {
+            // alert('Case study published successfully!!!!');
+            let warning_msg = document.getElementById('warning_msg');
+            warning_msg.innerHTML = "Case study published successfully!!";
+            warning_msg.className = 'success';
+        });
+
     }
 
     render() {
@@ -471,7 +517,7 @@ this.setState({client_name1: this.state.client_code_name? this.state.client_code
                         </ReactToPdf>*/}
                         <button className="btn btn-primary btn-xl text-uppercase export-btn" onClick={this.exporttoPdf}>Export</button>
 
-                        <button className="btn btn-primary btn-xl text-uppercase publish-btn"
+                        <button id="publish_btn" className="btn btn-primary btn-xl text-uppercase publish-btn"
                                 data-toggle="modal"
                                 data-target="#ibm-publish"> PUBLISH</button>
 
@@ -491,7 +537,7 @@ this.setState({client_name1: this.state.client_code_name? this.state.client_code
                                     </div>
                                     <div className="modal-footer">
 
-                                        <button data-dismiss="modal" className="btn btn-primary export-btn-md">
+                                        <button  onClick={() => this.checkFormPublish()} data-dismiss="modal" className="btn btn-primary export-btn-md">
                                             Publish
                                         </button>
                                     </div>
