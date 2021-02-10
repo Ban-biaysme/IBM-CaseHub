@@ -1,5 +1,5 @@
 import React from 'react';
-import Axios from "axios";
+
 import axios from "../axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CaseStydyFormStyle.css";
@@ -14,16 +14,16 @@ export default class CaseStudyForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            project_name: '', project_industry: '', country: '', city: '', client_name: '', client_code_name: '',
+            project_name: '', client_name1:'',project_industry: '', country: '', city: '', client_name: '', client_code_name: '',
             client_phone: '', client_email: '', project_start_date: '',
-            project_end_date: '', problem_space: '', approach: '', idea: '', impact: '',username:''
+            project_end_date: '', problem_space: '', approach: '', idea: '', impact: ''
         };
-        let uName = localStorage.getItem('login-user');
-        this.setState({username:uName})
+
     }
     exporttoPdf = () =>{
+this.setState({client_name1: this.state.client_code_name? this.state.client_code_name : this.state.client_name});
         axios.post(`create-pdf`, this.state )
-            .then(()=> Axios.get(`${this.props.serverURI}/fetch-pdf`,{responseType: 'blob'}))
+            .then(()=> axios.get(`fetch-pdf`,{responseType: 'blob'}))
             .then((res)=>{
                 const pdfBlob =new Blob([res.data],{type:'application/pdf'});
                 saveAs(pdfBlob,this.state.project_name+'.pdf');
@@ -137,7 +137,7 @@ export default class CaseStudyForm extends React.Component {
     }
 
     addCaseStudy() {
-        Axios.post(`${this.props.serverURI}/create`, {
+        axios.post(`create`, {
             project_name: this.state.project_name,
             project_industry: this.state.project_industry,
             country: this.state.country,
@@ -154,7 +154,7 @@ export default class CaseStudyForm extends React.Component {
             idea: this.state.idea,
             impact: this.state.impact,
             status: "Draft",
-            userName: this.state.username
+            username: localStorage.getItem('login-user')
 
 
 
@@ -455,7 +455,7 @@ export default class CaseStudyForm extends React.Component {
 
                     <div className="col-lg-12 text-center btn-section">
 
-                        <button className="btn btn-primary btn-xl text-uppercase save-btn"
+                        <button id="save_changed" className="btn btn-primary btn-xl text-uppercase save-btn"
                                 onClick={() => this.checkForm()}> SAVE
                         </button>
 
@@ -490,14 +490,7 @@ export default class CaseStudyForm extends React.Component {
                                         <h5>Do you want to publish the case study?</h5>
                                     </div>
                                     <div className="modal-footer">
-                                        {/*<ReactToPdf targetRef={ref} filename="div-blue.pdf">*/}
-                                        {/*    <button className="btn btn-primary export-btn-md">*/}
-                                        {/*        One Page PDF*/}
-                                        {/*    </button>*/}
-                                        {/*</ReactToPdf>*/}
-                                        {/*<button className="btn btn-primary export-btn-md">*/}
-                                        {/*    One Page .pptx*/}
-                                        {/*</button>*/}
+
                                         <button data-dismiss="modal" className="btn btn-primary export-btn-md">
                                             Publish
                                         </button>

@@ -1,23 +1,39 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
-
+import SearchCases from "../casestudy/pages/SearchCases";
 import "./Home.css";
 import axios from "../axios";
+import CaseList from "../casestudy/components/CaseList";
 
-
+let CASES=[];
 
 export class Home extends React.Component {
     constructor(props){
         super(props);
-        this.state={ project_industry:'', client_name:'',tag_data:""};
+        this.state={ project_industry:'', client_name:'',tag_data:"",searched: false ,data:""};
       // this.componentDidMount = this.componentDidMount.bind(this);
     }
+    searchfunction = () =>{
+
+        axios.post(`searchtags`, this.state ).then((res)=>{
+          this.setState({data: res.data});
+            CASES=[];
+
+            Array.from(this.state.data).map((val)=> {
+                CASES.push(
+                    {
+                        project_id: val._id,
+                        project_name: val.project_name,
+                        client_name: val.client_name
+                    });
+                //id = val._id;
+            });
+this.setState({searched:true})
+        })
 
 
-
-
+    }
     render() {
         return (
 
@@ -76,26 +92,17 @@ export class Home extends React.Component {
 
                 </div>
                 <div className="col-lg-12 text-center">
+                    {this.state.searched ? <CaseList items={CASES}/>: <div></div>}
+                  {/*  <h1> My Search Results</h1>*/}
 
-                    <h1> My Search Results</h1>
                 </div>
             </div>
-
-
 
         )
     }
 
 
-    searchfunction = () =>{
-        axios.post(`searchtags`, this.state ).then((res)=>{
-            console.log(res);
-        });
-    }
 }
-
-
-
 
 
 

@@ -17,7 +17,7 @@ const CaseItem = props => {
             <Icon image={props.image} alt={props.name} />
           </div>
           <div className="case-item__info">
-            <h5 id="case-item-color">{split_at_index(props.project_name,15)}</h5>
+            <h5 id="case-item-color">{split_at_index(props.project_name,13)}</h5>
             <h3 id="case-item-color-name">
               {split_at_index(props.client_name,18)}
             </h3>

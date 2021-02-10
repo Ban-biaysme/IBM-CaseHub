@@ -12,10 +12,12 @@
     grid-gap: 10px;
     text-decoration: none;
     justify-content: center;
-    background-color: #F4F4F4;
+   /* background-color: #F4F4F4;*/
+    background-color: transparent;
     flex-wrap: wrap;
   }
 
 .case-item-color{
     color: #161616;
 }
+

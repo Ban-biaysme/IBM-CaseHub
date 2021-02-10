@@ -13,7 +13,7 @@ export class EditCaseStudy extends React.Component{
         super(props);
         this.state={_id:'', project_name:'', project_industry:'', country:'', city:'', client_name:'',client_code_name:'',
             client_address:'', client_phone:'', client_email:'', project_start_date:'',
-            project_end_date:'', problem_space:'', approach:'', idea:'', impact:'',data:""};
+            project_end_date:'', problem_space:'', approach:'', idea:'', impact:'',data:"",client_name1:''};
         this.componentDidMount = this.componentDidMount.bind(this);
     }
     componentDidMount() {
@@ -23,6 +23,8 @@ export class EditCaseStudy extends React.Component{
                            });
     }
     exporttoPdf = () =>{
+        this.setState({client_name1: this.state.client_code_name? this.state.client_code_name : this.state.client_name});
+
         axios.post(`create-pdf`, this.state )
             .then(()=> axios.get(`fetch-pdf`,{responseType: 'blob'}))
             .then((res)=>{
@@ -153,7 +155,9 @@ export class EditCaseStudy extends React.Component{
             approach: this.state.approach,
             idea: this.state.idea,
             impact: this.state.impact,
-            status: "Draft"
+            status: "Draft",
+
+           /* username: localStorage.getItem('login-user')*/
 
         }).then(()=> {
             // alert('Case study Updated successfully!!!!');
