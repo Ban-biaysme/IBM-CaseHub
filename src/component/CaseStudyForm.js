@@ -488,7 +488,6 @@ export default class CaseStudyForm extends React.Component {
                                     </div>
                                     <div className="modal-body">
                                         <h5>Do you want to publish the case study?</h5>
-
                                     </div>
                                     <div className="modal-footer">
                                         {/*<ReactToPdf targetRef={ref} filename="div-blue.pdf">*/}

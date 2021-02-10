@@ -28,9 +28,112 @@ export class EditCaseStudy extends React.Component{
             .then((res)=>{
                 const pdfBlob =new Blob([res.data],{type:'application/pdf'});
                 saveAs(pdfBlob,this.state.project_name+'.pdf');
+
+                //Success message added
+                let warning_msg = document.getElementById('warning_msg');
+                warning_msg.innerHTML = "PDF file generated successfully!!";
+                warning_msg.className = 'pdf-msg';
             })
 
            }
+    checkForm(){
+        if(this.checkFormFields()){
+            this.updateCaseStudy();
+        }else{
+            // alert("Please enter the values for the required filed!!");
+
+            let warning_msg = document.getElementById('warning_msg');
+            warning_msg.innerHTML = "Please add the required fields";
+            warning_msg.className = 'error';
+        }
+    }
+
+    checkFormFields(){
+
+        //Validate the Project name field
+        let project_name = document.getElementById('project_name').value;
+        let project_name_msg = document.getElementById('project_name_msg');
+        let valid = true;
+
+        if (project_name==='') {
+            project_name_msg.innerHTML = "Please enter case study name";
+            project_name_msg.className = 'error';
+            valid = false;
+        }
+        else {
+            project_name_msg.innerHTML = "";
+            project_name_msg.className = '';
+        }
+
+        //Validate the Project industry field
+        let Project_industry = document.getElementById('Project_industry').value;
+        let Project_industry_msg = document.getElementById('Project_industry_msg');
+
+        if (Project_industry <= 1) {
+            Project_industry_msg.innerHTML = "Please select an industry";
+            Project_industry_msg.className = 'error';
+        }
+        else {
+            Project_industry_msg.innerHTML = "";
+            Project_industry_msg.className = '';
+        }
+
+        //Validate the country field
+        let country = document.getElementById('country').value;
+        let country_msg = document.getElementById('country_msg');
+
+        if (country <= 1) {
+            country_msg.innerHTML = "Please select an country";
+            country_msg.className = 'error';
+            valid = false;
+        }
+        else {
+            country_msg.innerHTML = "";
+            country_msg.className = '';
+        }
+
+        //Validate the country field
+        let city = document.getElementById('city').value;
+        let city_msg = document.getElementById('city_msg');
+
+        if (city ==='') {
+            city_msg.innerHTML = "Please select an city";
+            city_msg.className = 'error';
+            valid = false;
+        }
+        else {
+            city_msg.innerHTML = "";
+            city_msg.className = '';
+        }
+
+        //validate project start date
+        let project_start_date = document.getElementById('project_start_date').value;
+        let project_start_date_msg = document.getElementById('project_start_date_msg');
+
+        if (project_start_date == null || project_start_date ===""){
+            project_start_date_msg.innerHTML = "Please select project start date!";
+            project_start_date_msg.className = 'error';
+            valid = false;
+        }  else {
+            project_start_date_msg.innerHTML = "";
+            project_start_date_msg.className = '';
+        }
+
+        //validate project end date
+        let project_end_date = document.getElementById('project_end_date').value;
+        let project_end_date_msg = document.getElementById('project_end_date_msg');
+
+        if ((Date.parse(project_end_date) <= Date.parse(project_start_date))){
+            project_end_date_msg.innerHTML = "project end date should be greater than project start date!";
+            project_end_date_msg.className = 'error';
+            valid = false;
+        }  else {
+            project_end_date_msg.innerHTML = "";
+            project_end_date_msg.className = '';
+        }
+
+        return valid;
+    }
 
     updateCaseStudy(){
         axios.post(`update`, {
@@ -53,7 +156,10 @@ export class EditCaseStudy extends React.Component{
             status: "Draft"
 
         }).then(()=> {
-            alert('Case study Updated successfully!!!!')
+            // alert('Case study Updated successfully!!!!');
+            let warning_msg = document.getElementById('warning_msg');
+            warning_msg.innerHTML = "Congratulation Case study updated successfully!!";
+            warning_msg.className = 'success';
         });
 
     }
@@ -78,7 +184,10 @@ export class EditCaseStudy extends React.Component{
             status: "Published"
 
         }).then(()=> {
-            alert('Case study published successfully!!!!')
+            // alert('Case study published successfully!!!!');
+            let warning_msg = document.getElementById('warning_msg');
+            warning_msg.innerHTML = "Case study published successfully!!";
+            warning_msg.className = 'success';
         });
 
     }
@@ -98,7 +207,8 @@ export class EditCaseStudy extends React.Component{
                                     <label htmlFor="project_name">Case Study Name</label>
                                     <input defaultValue={this.state.project_name} onChange={event => {
                                         this.setState({project_name: event.target.value})
-                                    }} type="text" className="project_name" id="project_name"/>
+                                    }} type="text" className="project_name" id="project_name"required />
+                                    <span id="project_name_msg"/>
                                 </div>
 
                             </div>
@@ -117,6 +227,7 @@ export class EditCaseStudy extends React.Component{
                                             onChange={event => {
                                                 this.setState({project_industry: event.target.value})
                                             }}>
+                                        <option disabled selected value="-1">-- Select Industry-</option>
                                         <option value="banking">Banking</option>
                                         <option value="healthcare"> Heath Care</option>
                                         <option value="education"> Education</option>
@@ -124,6 +235,7 @@ export class EditCaseStudy extends React.Component{
                                         <option value="other">Other</option>
                                     </select>
                                 </div>
+                                <span id="Project_industry_msg"/>
                             </div>
                         </div>
                     </div>
@@ -138,6 +250,7 @@ export class EditCaseStudy extends React.Component{
                                             onChange={event => {
                                                 this.setState({country: event.target.value})
                                             }}>
+                                        <option disabled selected value="-1">-- Select an option--</option>
                                          <option value="australia">Australia</option>
                                         <option value="new-zealand"> New Zealand</option>
                                         <option value="other">Other</option>
@@ -145,6 +258,7 @@ export class EditCaseStudy extends React.Component{
                                 </div>
                             </div>
                             {/*end of country */}
+                            <span id="country_msg"/>
                         </div>
 
                         <div className="col-lg-2 mb-4">
@@ -155,6 +269,7 @@ export class EditCaseStudy extends React.Component{
                                         this.setState({city: event.target.value})
                                     }} type="text" className="form-control" id="city"/>
                                 </div>
+                                <span id="city_msg"/>
                             </div>
                             {/*end of city*/}
                         </div>
@@ -167,7 +282,7 @@ export class EditCaseStudy extends React.Component{
                             <div className="form-group">
                                 <label>Project Start Date:</label>
                                 <div className="datepicker date input-group p-0 shadow-sm">
-                                    <input defaultValue={this.state.project_start_date } type="date" id="startdate" name="checkin"
+                                    <input defaultValue={this.state.project_start_date } type="date" id="project_start_date" name="checkin"
                                            placeholder="Checking in date YYYY-mm-dd*"
                                            min='1899-01-01' className="form-control py-3 px-3" required="required"
                                            data-validation-required-message="Please enter project start date."
@@ -177,6 +292,7 @@ export class EditCaseStudy extends React.Component{
                                     <div className="input-group-append"><span className="input-group-text px-3"><i
                                         className="fas fa-clock"/></span></div>
                                 </div>
+                                <span id="project_start_date_msg"> </span>
                             </div>
                         </div>
                         {/*end of project start date*/}
@@ -185,7 +301,7 @@ export class EditCaseStudy extends React.Component{
                             <div className="form-group">
                                 <label>Project End Date:</label>
                                 <div className="datepicker date input-group p-0 shadow-sm">
-                                    <input defaultValue={this.state.project_end_date } type="date" id="enddate" name="checkin"
+                                    <input defaultValue={this.state.project_end_date } type="date" id="project_end_date" name="checkin"
                                            placeholder="Checking in date YYYY-mm-dd*"
                                            min='1899-01-01' className="form-control py-3 px-3" required="required"
                                            data-validation-required-message="Please enter project end date."
@@ -195,6 +311,7 @@ export class EditCaseStudy extends React.Component{
                                     <div className="input-group-append"><span className="input-group-text px-3"><i
                                         className="fas fa-clock"/></span>
                                     </div>
+                                    <span id="project_end_date_msg"> </span>
                                 </div>
                             </div>
                             {/*end of Project end date */}
@@ -349,11 +466,11 @@ export class EditCaseStudy extends React.Component{
                     </div>
                     {/* end of Impact */}
 
-
+                    <div className="alert-message error fade in hide span16" data-alert="alert" id="warning_msg"/>
                     <div className="col-lg-12 text-center btn-section">
 
                         <button className="btn btn-primary btn-xl text-uppercase save-btn"
-                                onClick={() => this.updateCaseStudy()}> UPDATE
+                                onClick={() => this.checkForm()}> UPDATE
                         </button>
 
                         <button onClick={this.exporttoPdf} className="btn btn-primary btn-xl text-uppercase export-btn" data-toggle="modal"
