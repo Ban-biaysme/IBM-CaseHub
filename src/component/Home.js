@@ -11,7 +11,7 @@ let CASES=[];
 export class Home extends React.Component {
     constructor(props){
         super(props);
-        this.state={ project_industry:'', client_name:'',tag_data:"",searched: false ,data:""};
+        this.state={ project_industry:'', client_name:'',tag_data:"",searched: true ,data:""};
       // this.componentDidMount = this.componentDidMount.bind(this);
     }
     searchfunction = () =>{
@@ -60,7 +60,7 @@ this.setState({searched:true})
                                             onChange={event => {
                                                 this.setState({project_industry: event.target.value})
                                             }}>
-                                        <option disabled selected value="0">All Industries</option>
+                                        <option  value="">All Industries</option>
                                         <option value="banking">Banking</option>
                                         <option value="healthcare"> Heath Care</option>
                                         <option value="telecom">Telecommunication</option>
@@ -75,12 +75,15 @@ this.setState({searched:true})
                                 <div className="controls controls-filter">
                                     <select id="Project_industry" name="industry" className="form-control form-control-filter" required
                                             onChange={event => {
-                                                this.setState({project_industry: event.target.value})
+                                                this.setState({client_name: event.target.value})
                                             }}>
-                                        <option disabled selected value="0">All Companies</option>con
-                                        <option value="banking"> ANZ</option>
-                                        <option value="healthcare"> Wellington Hospital</option>
-                                        <option value="telecom"> Vodafone</option>
+                                        <option  value="">All Companies</option>con
+                                        <option value="DIA"> DIA</option>
+                                        <option value="DDHB"> DDHB</option>
+                                        <option value="vodafone"> Vodafone</option>
+
+                                        <option value="IBM-client"> IBM-client</option>
+                                        <option value="CLIENT"> CLIENT</option>
                                         <option value="other"> Other</option>
                                     </select>
                                 </div>

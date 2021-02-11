@@ -23,8 +23,16 @@ function Login({setToken, serverURI}) {
                     setToken('res.data');
                     localStorage.setItem('login-token','success');
                     localStorage.setItem('login-user',username);
+                    localStorage.setItem('login-mgr',"false");
                     window.location.reload();
-                }
+                } else
+                  if(res.data['login'] === 'successmgr') {
+                           setToken('res.data');
+                           localStorage.setItem('login-token','success');
+                           localStorage.setItem('login-user',username);
+                      localStorage.setItem('login-mgr',"true");
+                           window.location.reload();
+                       }
             });
     }
 

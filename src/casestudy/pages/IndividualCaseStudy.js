@@ -2,17 +2,19 @@ import React, {useEffect, useState} from 'react';
 import axios from "../../axios";
 import {saveAs} from "file-saver";
 import './IndiView.css';
-import Axios from "axios";
+import MgrPrev from "../components/MgrPrev";
 
 export default class IndividualCaseStudy extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {data: ''};
+        this.state = {data: '',csID:''};
+
         this.componentDidMount = this.componentDidMount.bind(this);
     }
 
     componentDidMount() {
         const caseId = this.props.match.params.CaseId;
+        this.setState({csID: caseId});
         axios.post("view-by-id1", {params: {_id: caseId}}).then((res) => {
             this.setState(res.data[0]);
         });
@@ -33,8 +35,9 @@ export default class IndividualCaseStudy extends React.Component {
     }
 
     render() {
-        console.log(this.state.data );
-        return (
+
+
+                return (
                  <div>
 
                 {/*//    <div className=" ibm-div-padding">*/}
@@ -45,7 +48,7 @@ export default class IndividualCaseStudy extends React.Component {
                <div className="ibm-main-div1">
 
                     <div className="col-lg-3 mb-4 ">
-                        <h3 className="h3-back" data-dismiss="modal">&#60; Back</h3>
+                    {/*    <h3 className="h3-back" data-dismiss="modal">&#60; Back</h3>*/}
                        {/*<button className="btn btn-primary btn-xl text-uppercase export-btn-indiView" onClick={this.exporttoPdf}>Back</button>*/}
                        {/*<button type="button" className="close" data-dismiss="modal">&times;</button>*/}
 
@@ -99,7 +102,7 @@ export default class IndividualCaseStudy extends React.Component {
 
                 {/*end of raw*/}
         <div className="row blue-middle-div">
-            <h2> Case Study Fields<span><i className="fas fa-arrow-down white-arrow"/></span></h2>
+            <h2> Case Study Details<span><i className="fas fa-arrow-down white-arrow"/></span></h2>
         </div>
 
        <div className="ibm-div2 ">
@@ -130,7 +133,7 @@ export default class IndividualCaseStudy extends React.Component {
                      <div className="btn-section-indiView">
                          <button className="btn btn-primary btn-xl text-uppercase export-btn-indiView" onClick={this.exporttoPdf}>Export</button>
                          {/*<button type="button" className="close" data-dismiss="modal">&times;</button>*/}
-
+{/*<MgrPrev caseId = {this.state.csID}/>*/}
                      </div>
 
 
